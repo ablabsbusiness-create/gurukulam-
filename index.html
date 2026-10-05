@@ -89,6 +89,7 @@ a{text-decoration:none;color:inherit}
 .rkg-q-opts input{accent-color:#c6283d;margin:0}
 .rkg-q-opts label:has(input:checked){border-color:#c6283d;background:#fdf1f3;color:#102a56}
 .rkg-tse-msg{margin:14px 0 0;font-size:13px;font-weight:700;color:#c6283d;min-height:1.2em}
+.rkg-tse [hidden]{display:none!important}
 .rkg-tse-done{text-align:center;padding:30px 10px}
 .rkg-tse-done strong{display:block;font-size:30px;color:#102a56;margin-bottom:8px}
 .rkg-tse-done p{color:#66768b;font-size:15px;line-height:1.7;margin:0}
@@ -323,7 +324,8 @@ a{text-decoration:none;color:inherit}
 
     <div class="rkg-tse-done" id="rkg-tse-done" hidden>
       <strong>Thank you!</strong>
-      <p>Your answers have been submitted. Our team will contact you with your result.</p>
+      <p id="rkg-tse-done-text">Your answers have been submitted. Our team will contact you with your result.</p>
+      <a class="rkg-tse-btn" id="rkg-tse-wa" target="_blank" rel="noopener" hidden>Send Answers on WhatsApp →</a>
     </div>
   </form>
 </section>
@@ -480,7 +482,9 @@ a{text-decoration:none;color:inherit}
 <script>
 (function(){
   // Paste the Google Apps Script web app URL here (see google-apps-script/README.md).
+  // While it is empty, answers are sent to the institute on WhatsApp instead.
   var TSE_ENDPOINT='';
+  var TSE_WHATSAPP='918738885544';
   var DURATION=30*60;
   // Answers are not stored here: the Apps Script scores each submission.
   var QUESTIONS=[
@@ -536,7 +540,6 @@ a{text-decoration:none;color:inherit}
   }
 
   $('rkg-tse-go').addEventListener('click',function(){
-    if(!TSE_ENDPOINT){msg.textContent='The online test is not open yet. Please contact the institute.';return}
     var fields=startBox.querySelectorAll('input,textarea');
     for(var i=0;i<fields.length;i++){
       fields[i].value=fields[i].value.trim();
@@ -555,9 +558,26 @@ a{text-decoration:none;color:inherit}
     send(false);
   });
 
+  function finish(){
+    done=true;clearInterval(tick);testBox.hidden=true;doneBox.hidden=false;msg.textContent='';
+    doneBox.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+  function field(n){return form.elements[n].value.trim()}
+  function choice(i){var c=form.querySelector('input[name="q'+(i+1)+'"]:checked');return c?c.value:''}
+  function sendWhatsApp(){
+    var secs=Math.round((Date.now()-startedAt)/1000);
+    var text='Talent Search Exam (Class 9) - Radha Krishna Gurukulam'+
+      '\nStudent: '+field('name')+'\nFather: '+field('father')+'\nContact: '+field('phone')+
+      '\nSchool: '+field('school')+'\nAddress: '+field('address')+'\nTime taken: '+fmt(Math.min(secs,DURATION))+
+      '\nAnswers: '+QUESTIONS.map(function(_,i){return (i+1)+'-'+(choice(i)||'_')}).join(', ');
+    var wa=$('rkg-tse-wa');
+    wa.href='https://wa.me/'+TSE_WHATSAPP+'?text='+encodeURIComponent(text);wa.hidden=false;
+    $('rkg-tse-done-text').textContent='One last step: tap the button below to send your answers to Radha Krishna Gurukulam on WhatsApp.';
+    finish();
+  }
   function send(timeUp){
     if(sending||done)return;
-    if(!TSE_ENDPOINT){msg.textContent='Online submission is not set up yet. Please contact the institute.';return}
+    if(!TSE_ENDPOINT){sendWhatsApp();return}
     sending=true;submitBtn.disabled=true;submitBtn.textContent='Submitting…';
     msg.textContent=timeUp?'Time is up. Submitting your answers…':'';
     var data=new URLSearchParams();
@@ -567,10 +587,7 @@ a{text-decoration:none;color:inherit}
     QUESTIONS.forEach(function(_,i){var c=form.querySelector('input[name="q'+(i+1)+'"]:checked');data.append('q'+(i+1),c?c.value:'')});
     // no-cors: Apps Script does not send CORS headers, so the reply is unreadable;
     // a network failure still rejects, which is what we need to know.
-    fetch(TSE_ENDPOINT,{method:'POST',mode:'no-cors',body:data}).then(function(){
-      done=true;clearInterval(tick);testBox.hidden=true;doneBox.hidden=false;msg.textContent='';
-      doneBox.scrollIntoView({behavior:'smooth',block:'center'});
-    }).catch(function(){
+    fetch(TSE_ENDPOINT,{method:'POST',mode:'no-cors',body:data}).then(finish).catch(function(){
       sending=false;submitBtn.disabled=false;submitBtn.textContent='Try Submitting Again →';
       msg.textContent='Could not submit. Please check your internet connection and try again.';
     });
