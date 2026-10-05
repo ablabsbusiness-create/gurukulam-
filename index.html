@@ -72,8 +72,11 @@ a{text-decoration:none;color:inherit}
 .rkg-tse input[type=text],.rkg-tse input[type=tel],.rkg-tse textarea{width:100%;padding:13px;border:1px solid #ccd7e3;border-radius:8px;margin-top:6px;background:#fbfcfe;font:inherit;font-size:14px;color:#102a56}
 .rkg-tse textarea{min-height:70px;resize:vertical}
 .rkg-tse input:focus,.rkg-tse textarea:focus{outline:2px solid #c6283d;outline-offset:-1px;border-color:#c6283d}
-.rkg-tse-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;background:#c6283d;color:#fff;padding:14px 22px;border-radius:8px;font-weight:800;font-size:14px;cursor:pointer;margin-top:18px}
-.rkg-tse-btn:disabled{opacity:.6;cursor:wait}
+.rkg-tse-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;background:linear-gradient(135deg,#dc3d53,#b51d32);color:#fff!important;padding:14px 26px;border-radius:999px;font:inherit;font-weight:800;font-size:14px;letter-spacing:.2px;cursor:pointer;margin-top:18px;box-shadow:0 10px 24px -10px rgba(198,40,61,.75);transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}
+.rkg-tse-btn:hover{transform:translateY(-2px);filter:brightness(1.06);box-shadow:0 16px 30px -12px rgba(198,40,61,.85)}
+.rkg-tse-btn:active{transform:translateY(0);box-shadow:0 6px 16px -8px rgba(198,40,61,.75)}
+.rkg-tse-btn:focus-visible{outline:3px solid rgba(198,40,61,.35);outline-offset:3px}
+.rkg-tse-btn:disabled{opacity:.6;cursor:wait;transform:none}
 .rkg-tse-bar{position:sticky;top:83px;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:12px;background:#102a56;color:#fff;border-radius:12px;padding:12px 18px;margin-bottom:22px;font-size:13px;font-weight:700}
 .rkg-tse-bar b{font-size:20px;font-variant-numeric:tabular-nums}
 .rkg-tse-bar.is-low{background:#c6283d}
@@ -89,7 +92,15 @@ a{text-decoration:none;color:inherit}
 .rkg-q-opts label:has(input:checked){border-color:#c6283d;background:#fdf1f3;color:#102a56}
 .rkg-tse-msg{margin:14px 0 0;font-size:13px;font-weight:700;color:#c6283d;min-height:1.2em}
 .rkg-tse [hidden]{display:none!important}
-.rkg-tse-open{margin-top:0;padding:16px 26px;font-size:15px}
+.rkg-tse-open{margin-top:0;padding:10px 10px 10px 10px;gap:14px;text-align:left}
+.rkg-tse-open-ic{width:48px;height:48px;flex:0 0 auto;border-radius:50%;background:rgba(255,255,255,.17);display:grid;place-items:center}
+.rkg-tse-open-ic svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.rkg-tse-open-txt{flex:1 1 auto}
+.rkg-tse-open-txt b{display:block;font-size:17px;line-height:1.2}
+.rkg-tse-open-txt small{display:block;font-size:12px;font-weight:600;opacity:.85;margin-top:3px}
+.rkg-tse-open-arw{width:42px;height:42px;flex:0 0 auto;margin-left:14px;border-radius:50%;background:#fff;color:#c6283d;display:grid;place-items:center;font-size:20px;transition:transform .2s ease}
+.rkg-tse-open:hover .rkg-tse-open-arw{transform:translateX(4px)}
+@media(prefers-reduced-motion:reduce){.rkg-tse-btn,.rkg-tse-open-arw{transition:none}.rkg-tse-btn:hover,.rkg-tse-open:hover .rkg-tse-open-arw{transform:none}}
 .rkg-modal{margin:auto;inset:0;width:min(980px,calc(100% - 32px));max-width:none;max-height:calc(100dvh - 32px);padding:0;border:0;border-radius:18px;box-shadow:0 30px 90px rgba(11,31,68,.35);color:#102a56;overflow:hidden}
 .rkg-modal[open]{display:flex;flex-direction:column}
 .rkg-modal::backdrop{background:rgba(11,31,68,.65)}
@@ -110,9 +121,8 @@ html.rkg-modal-lock{overflow:hidden}
 .rkg-stats strong{display:block;font-size:32px}
 .rkg-stats span{font-size:10px;color:#aec2d9;text-transform:uppercase;letter-spacing:1px}
 .rkg-reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:40px}
-.rkg-reason{background:#fff;border:1px solid #dfe6ef;border-radius:15px;padding:25px;min-height:185px}
-.rkg-reason>b{color:#c6283d;font-size:11px}
-.rkg-reason h3{font-size:18px;margin-top:42px;margin-bottom:8px}
+.rkg-reason{background:#fff;border:1px solid #dfe6ef;border-radius:15px;padding:25px}
+.rkg-reason h3{font-size:18px;margin-bottom:8px}
 .rkg-reason p{font-size:12px;color:#66768b;line-height:1.6}
 .rkg-campus{background:#102a56;color:#fff}
 .rkg-campus-inner{max-width:1200px;margin:auto;padding:85px 25px;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
@@ -177,7 +187,7 @@ html.rkg-modal-lock{overflow:hidden}
 }
 @media(max-width:560px){
 .rkg-brand{min-width:0}.rkg-brand img{width:48px;height:48px}.rkg-brand strong{font-size:16px}
-.rkg-reasons{grid-template-columns:1fr}.rkg-modal{width:100%;max-height:100dvh;height:100dvh;border-radius:0}.rkg-modal-head{padding:12px 16px}.rkg-modal-head strong{font-size:16px}.rkg-tse-open{width:100%}.rkg-tse{padding:20px 16px}.rkg-tse-fields,.rkg-q-opts{grid-template-columns:1fr}.rkg-tse-meta{grid-template-columns:1fr 1fr}.rkg-tse-meta div:nth-child(2){border-right:0}.rkg-tse-meta div:nth-child(-n+2){border-bottom:1px solid #dfe6ef}.rkg-tse-bar{top:74px}.rkg-stats strong{font-size:25px}
+.rkg-reasons{grid-template-columns:1fr}.rkg-modal{width:100%;max-height:100dvh;height:100dvh;border-radius:0}.rkg-modal-head{padding:12px 16px}.rkg-modal-head strong{font-size:16px}.rkg-tse-open{width:100%;gap:12px;padding:8px}.rkg-tse-open-ic{width:42px;height:42px}.rkg-tse-open-ic svg{width:20px;height:20px}.rkg-tse-open-txt b{font-size:15px}.rkg-tse-open-txt small{font-size:11.5px}.rkg-tse-open-arw{width:38px;height:38px;margin-left:4px;font-size:18px}.rkg-tse{padding:20px 16px}.rkg-tse-fields,.rkg-q-opts{grid-template-columns:1fr}.rkg-tse-meta{grid-template-columns:1fr 1fr}.rkg-tse-meta div:nth-child(2){border-right:0}.rkg-tse-meta div:nth-child(-n+2){border-bottom:1px solid #dfe6ef}.rkg-tse-bar{top:74px}.rkg-stats strong{font-size:25px}
 .rkg-section{padding:70px 18px}.rkg-talent,.rkg-admission{padding-left:18px;padding-right:18px}
 .rkg-cta{margin:0 16px 50px;padding:38px 25px;display:block}.rkg-cta .rkg-btn{margin-top:22px}
 .rkg-two{grid-template-columns:1fr}.rkg-steps{grid-template-columns:1fr 1fr}
@@ -304,7 +314,11 @@ html.rkg-modal-lock{overflow:hidden}
     <div><strong>100</strong><span>Maximum marks</span></div>
   </div>
 
-  <button type="button" class="rkg-tse-btn rkg-tse-open" id="rkg-tse-open">Start Talent Search Exam →</button>
+  <button type="button" class="rkg-tse-btn rkg-tse-open" id="rkg-tse-open">
+    <span class="rkg-tse-open-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4.5V3h6v1.5M9 10h6M9 14h6M9 18h3"/></svg></span>
+    <span class="rkg-tse-open-txt"><b>Start Talent Search Exam</b><small>20 questions · 30 minutes</small></span>
+    <span class="rkg-tse-open-arw" aria-hidden="true">→</span>
+  </button>
 
   <dialog class="rkg-modal" id="rkg-tse-modal" aria-labelledby="rkg-tse-title">
   <div class="rkg-modal-head">
@@ -357,12 +371,12 @@ html.rkg-modal-lock{overflow:hidden}
   <div class="rkg-label">WHY RADHA KRISHNA GURUKULAM?</div>
   <h2>Built around <span>student success.</span></h2>
   <div class="rkg-reasons">
-    <article class="rkg-reason"><b>01</b><h3>Qualified Faculty Team</h3><p>Experienced faculty focused on academic clarity and competitive preparation.</p></article>
-    <article class="rkg-reason"><b>02</b><h3>Concept Clarity</h3><p>Learning begins with strong fundamentals before moving toward advanced application.</p></article>
-    <article class="rkg-reason"><b>03</b><h3>Proven Results</h3><p>A structured approach that keeps preparation measurable through regular assessments.</p></article>
-    <article class="rkg-reason"><b>04</b><h3>Personal Mentorship</h3><p>Individual attention and guidance help students maintain a focused routine.</p></article>
-    <article class="rkg-reason"><b>05</b><h3>Regular Test Series</h3><p>Regular testing provides practice, feedback and opportunities to improve.</p></article>
-    <article class="rkg-reason"><b>06</b><h3>Discipline & Values</h3><p>Academic growth is supported by discipline, responsibility and holistic development.</p></article>
+    <article class="rkg-reason"><h3>Qualified Faculty Team</h3><p>Experienced faculty focused on academic clarity and competitive preparation.</p></article>
+    <article class="rkg-reason"><h3>Concept Clarity</h3><p>Learning begins with strong fundamentals before moving toward advanced application.</p></article>
+    <article class="rkg-reason"><h3>Proven Results</h3><p>A structured approach that keeps preparation measurable through regular assessments.</p></article>
+    <article class="rkg-reason"><h3>Personal Mentorship</h3><p>Individual attention and guidance help students maintain a focused routine.</p></article>
+    <article class="rkg-reason"><h3>Regular Test Series</h3><p>Regular testing provides practice, feedback and opportunities to improve.</p></article>
+    <article class="rkg-reason"><h3>Discipline & Values</h3><p>Academic growth is supported by discipline, responsibility and holistic development.</p></article>
   </div>
 </section>
 
