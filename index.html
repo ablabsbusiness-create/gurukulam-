@@ -92,6 +92,16 @@ a{text-decoration:none;color:inherit}
 .rkg-q-opts label:has(input:checked){border-color:#c6283d;background:#fdf1f3;color:#102a56}
 .rkg-tse-msg{margin:14px 0 0;font-size:13px;font-weight:700;color:#c6283d;min-height:1.2em}
 .rkg-tse [hidden]{display:none!important}
+.rkg-tse-cta{display:grid;grid-template-columns:1fr auto;align-items:center;gap:36px;padding:28px 30px;border-radius:20px;background:linear-gradient(135deg,#102a56 0%,#1b3d72 100%);color:#fff;box-shadow:0 24px 50px -24px rgba(16,42,86,.55);position:relative;overflow:hidden}
+.rkg-tse-cta:after{content:"";position:absolute;right:-80px;top:-80px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(198,40,61,.35),rgba(198,40,61,0) 70%);pointer-events:none}
+.rkg-tse-how{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rkg-tse-how li{display:flex;align-items:center;gap:12px}
+.rkg-tse-how i{width:44px;height:44px;flex:0 0 auto;border-radius:12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);display:grid;place-items:center}
+.rkg-tse-how svg{width:21px;height:21px;fill:none;stroke:#ff9aa7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.rkg-tse-how strong{display:block;font-size:14px}
+.rkg-tse-how small{display:block;font-size:12px;color:#b9c8dc;margin-top:2px}
+.rkg-tse-cta .rkg-tse-open{position:relative;z-index:1;box-shadow:0 14px 30px -12px rgba(0,0,0,.55)}
+@media(max-width:1100px){.rkg-tse-cta{grid-template-columns:1fr;gap:24px}.rkg-tse-cta .rkg-tse-open{justify-self:start}}
 .rkg-tse-open{margin-top:0;padding:10px 10px 10px 10px;gap:14px;text-align:left}
 .rkg-tse-open-ic{width:48px;height:48px;flex:0 0 auto;border-radius:50%;background:rgba(255,255,255,.17);display:grid;place-items:center}
 .rkg-tse-open-ic svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
@@ -186,7 +196,7 @@ html.rkg-modal-lock{overflow:hidden}
 }
 @media(max-width:560px){
 .rkg-brand{min-width:0}.rkg-brand img{width:48px;height:48px}.rkg-brand strong{font-size:16px}
-.rkg-reasons{grid-template-columns:1fr}.rkg-modal{width:100%;max-height:100dvh;height:100dvh;border-radius:0}.rkg-modal-head{padding:12px 16px}.rkg-modal-head strong{font-size:16px}.rkg-tse-open{width:100%;gap:12px;padding:8px}.rkg-tse-open-ic{width:42px;height:42px}.rkg-tse-open-ic svg{width:20px;height:20px}.rkg-tse-open-txt b{font-size:15px}.rkg-tse-open-txt small{font-size:11.5px}.rkg-tse-open-arw{width:38px;height:38px;margin-left:4px;font-size:18px}.rkg-tse{padding:20px 16px}.rkg-tse-fields,.rkg-q-opts{grid-template-columns:1fr}.rkg-tse-meta{grid-template-columns:1fr 1fr}.rkg-tse-meta div:nth-child(2){border-right:0}.rkg-tse-meta div:nth-child(-n+2){border-bottom:1px solid #dfe6ef}.rkg-tse-bar{top:74px}.rkg-stats strong{font-size:25px}
+.rkg-reasons{grid-template-columns:1fr}.rkg-modal{width:100%;max-height:100dvh;height:100dvh;border-radius:0}.rkg-modal-head{padding:12px 16px}.rkg-modal-head strong{font-size:16px}.rkg-tse-cta{padding:22px 18px}.rkg-tse-how{grid-template-columns:1fr;gap:14px}.rkg-tse-cta .rkg-tse-open{justify-self:stretch}.rkg-tse-open{width:100%;gap:12px;padding:8px}.rkg-tse-open-ic{width:42px;height:42px}.rkg-tse-open-ic svg{width:20px;height:20px}.rkg-tse-open-txt b{font-size:15px}.rkg-tse-open-txt small{font-size:11.5px}.rkg-tse-open-arw{width:38px;height:38px;margin-left:4px;font-size:18px}.rkg-tse{padding:20px 16px}.rkg-tse-fields,.rkg-q-opts{grid-template-columns:1fr}.rkg-tse-meta{grid-template-columns:1fr 1fr}.rkg-tse-meta div:nth-child(2){border-right:0}.rkg-tse-meta div:nth-child(-n+2){border-bottom:1px solid #dfe6ef}.rkg-tse-bar{top:74px}.rkg-stats strong{font-size:25px}
 .rkg-section{padding:70px 18px}.rkg-talent,.rkg-admission{padding-left:18px;padding-right:18px}
 .rkg-cta{margin:0 16px 50px;padding:38px 25px;display:block}.rkg-cta .rkg-btn{margin-top:22px}
 .rkg-two{grid-template-columns:1fr}.rkg-steps{grid-template-columns:1fr 1fr}
@@ -313,11 +323,18 @@ html.rkg-modal-lock{overflow:hidden}
     <div><strong>100</strong><span>Maximum marks</span></div>
   </div>
 
-  <button type="button" class="rkg-tse-btn rkg-tse-open" id="rkg-tse-open">
-    <span class="rkg-tse-open-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4.5V3h6v1.5M9 10h6M9 14h6M9 18h3"/></svg></span>
-    <span class="rkg-tse-open-txt"><b>Start Talent Search Exam</b><small>20 questions · 30 minutes</small></span>
-    <span class="rkg-tse-open-arw" aria-hidden="true">→</span>
-  </button>
+  <div class="rkg-tse-cta">
+    <ul class="rkg-tse-how">
+      <li><i aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></i><span><strong>Fill your details</strong><small>Name, school and contact</small></span></li>
+      <li><i aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg></i><span><strong>Answer 20 questions</strong><small>Within 30 minutes</small></span></li>
+      <li><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg></i><span><strong>Submit your answers</strong><small>Our team shares your result</small></span></li>
+    </ul>
+    <button type="button" class="rkg-tse-btn rkg-tse-open" id="rkg-tse-open">
+      <span class="rkg-tse-open-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4.5V3h6v1.5M9 10h6M9 14h6M9 18h3"/></svg></span>
+      <span class="rkg-tse-open-txt"><b>Start Talent Search Exam</b><small>20 questions · 30 minutes</small></span>
+      <span class="rkg-tse-open-arw" aria-hidden="true">→</span>
+    </button>
+  </div>
 
   <dialog class="rkg-modal" id="rkg-tse-modal" aria-labelledby="rkg-tse-title">
   <div class="rkg-modal-head">
