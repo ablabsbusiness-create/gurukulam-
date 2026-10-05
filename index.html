@@ -90,6 +90,19 @@ a{text-decoration:none;color:inherit}
 .rkg-q-opts label:has(input:checked){border-color:#c6283d;background:#fdf1f3;color:#102a56}
 .rkg-tse-msg{margin:14px 0 0;font-size:13px;font-weight:700;color:#c6283d;min-height:1.2em}
 .rkg-tse [hidden]{display:none!important}
+.rkg-tse-open{margin-top:0;padding:16px 26px;font-size:15px}
+.rkg-modal{margin:auto;inset:0;width:min(980px,calc(100% - 32px));max-width:none;max-height:calc(100dvh - 32px);padding:0;border:0;border-radius:18px;box-shadow:0 30px 90px rgba(11,31,68,.35);color:#102a56;overflow:hidden}
+.rkg-modal[open]{display:flex;flex-direction:column}
+.rkg-modal::backdrop{background:rgba(11,31,68,.65)}
+.rkg-modal-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 22px;border-bottom:1px solid #dfe6ef;background:#fff}
+.rkg-modal-head small{display:block;font-size:10px;font-weight:800;letter-spacing:1.6px;color:#c6283d}
+.rkg-modal-head strong{font-size:18px}
+.rkg-modal-x{width:40px;height:40px;flex:0 0 auto;border:1px solid #dfe6ef;border-radius:50%;background:#fff;font-size:24px;line-height:1;color:#102a56;cursor:pointer}
+.rkg-modal-x:hover{background:#f4f7fb}
+.rkg-modal-body{overflow:auto;overscroll-behavior:contain}
+.rkg-modal .rkg-tse{border:0;border-radius:0;box-shadow:none}
+.rkg-modal .rkg-tse-bar{top:0}
+html.rkg-modal-lock{overflow:hidden}
 .rkg-tse-done{text-align:center;padding:30px 10px}
 .rkg-tse-done strong{display:block;font-size:30px;color:#102a56;margin-bottom:8px}
 .rkg-tse-done p{color:#66768b;font-size:15px;line-height:1.7;margin:0}
@@ -165,7 +178,7 @@ a{text-decoration:none;color:inherit}
 }
 @media(max-width:560px){
 .rkg-brand{min-width:0}.rkg-brand img{width:48px;height:48px}.rkg-brand strong{font-size:16px}
-.rkg-reasons{grid-template-columns:1fr}.rkg-tse{padding:20px 16px}.rkg-tse-fields,.rkg-q-opts{grid-template-columns:1fr}.rkg-tse-meta{grid-template-columns:1fr 1fr}.rkg-tse-meta div:nth-child(2){border-right:0}.rkg-tse-meta div:nth-child(-n+2){border-bottom:1px solid #dfe6ef}.rkg-tse-bar{top:74px}.rkg-stats strong{font-size:25px}
+.rkg-reasons{grid-template-columns:1fr}.rkg-modal{width:100%;max-height:100dvh;height:100dvh;border-radius:0}.rkg-modal-head{padding:12px 16px}.rkg-modal-head strong{font-size:16px}.rkg-tse-open{width:100%}.rkg-tse{padding:20px 16px}.rkg-tse-fields,.rkg-q-opts{grid-template-columns:1fr}.rkg-tse-meta{grid-template-columns:1fr 1fr}.rkg-tse-meta div:nth-child(2){border-right:0}.rkg-tse-meta div:nth-child(-n+2){border-bottom:1px solid #dfe6ef}.rkg-tse-bar{top:74px}.rkg-stats strong{font-size:25px}
 .rkg-section{padding:70px 18px}.rkg-talent,.rkg-admission{padding-left:18px;padding-right:18px}
 .rkg-cta{margin:0 16px 50px;padding:38px 25px;display:block}.rkg-cta .rkg-btn{margin-top:22px}
 .rkg-two{grid-template-columns:1fr}.rkg-steps{grid-template-columns:1fr 1fr}
@@ -241,7 +254,7 @@ a{text-decoration:none;color:inherit}
       <p>Academic classes for 9th to 12th with focused preparation for IIT-JEE, NEET, NDA and Foundation, all under one roof.</p>
       <div class="rkg-actions">
         <a class="rkg-btn" href="#rkg-admission">Admission Open →</a>
-        <a class="rkg-ghost" href="#rkg-talent">Take Talent Test →</a>
+        <a class="rkg-ghost" href="#rkg-talent" data-tse-open>Take Talent Test →</a>
       </div>
     </div>
     <div class="rkg-cap" aria-hidden="true">
@@ -292,6 +305,14 @@ a{text-decoration:none;color:inherit}
     <div><strong>100</strong><span>Maximum marks</span></div>
   </div>
 
+  <button type="button" class="rkg-tse-btn rkg-tse-open" id="rkg-tse-open">Start Talent Search Exam →</button>
+
+  <dialog class="rkg-modal" id="rkg-tse-modal" aria-labelledby="rkg-tse-title">
+  <div class="rkg-modal-head">
+    <div><small>RADHA KRISHNA GURUKULAM</small><strong id="rkg-tse-title">Talent Search Exam · Class 9</strong></div>
+    <button type="button" class="rkg-modal-x" id="rkg-tse-close" aria-label="Close">&times;</button>
+  </div>
+  <div class="rkg-modal-body" id="rkg-tse-body">
   <form id="rkg-tse" class="rkg-tse" novalidate>
     <div id="rkg-tse-start">
       <h3>Important Instructions</h3>
@@ -328,6 +349,8 @@ a{text-decoration:none;color:inherit}
       <a class="rkg-tse-btn" id="rkg-tse-wa" target="_blank" rel="noopener" hidden>Send Answers on WhatsApp →</a>
     </div>
   </form>
+  </div>
+  </dialog>
 </section>
 
 <div class="rkg-stats">
@@ -516,6 +539,22 @@ a{text-decoration:none;color:inherit}
       msg=$('rkg-tse-msg'),timeEl=$('rkg-tse-time'),countEl=$('rkg-tse-count'),bar=$('rkg-tse-bar'),
       submitBtn=$('rkg-tse-submit'),qsBox=$('rkg-tse-qs');
   var L=['A','B','C','D'],endsAt=0,startedAt=0,tick=null,sending=false,done=false;
+  var modal=$('rkg-tse-modal'),body=$('rkg-tse-body');
+  function openModal(){
+    if(!modal.open){modal.showModal();document.documentElement.classList.add('rkg-modal-lock')}
+  }
+  function closeModal(){
+    // Leaving mid-test keeps the answers and the timer; reopening resumes.
+    if(tick&&!done&&!confirm('Your test is in progress and the timer keeps running. Close it for now?'))return;
+    modal.close();
+  }
+  modal.addEventListener('close',function(){document.documentElement.classList.remove('rkg-modal-lock')});
+  modal.addEventListener('cancel',function(e){e.preventDefault();closeModal()});
+  $('rkg-tse-open').addEventListener('click',openModal);
+  [].forEach.call(document.querySelectorAll('[data-tse-open]'),function(a){
+    a.addEventListener('click',function(e){e.preventDefault();openModal()});
+  });
+  $('rkg-tse-close').addEventListener('click',closeModal);
 
   function el(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e}
   QUESTIONS.forEach(function(item,i){
@@ -548,7 +587,7 @@ a{text-decoration:none;color:inherit}
     msg.textContent='';startBox.hidden=true;testBox.hidden=false;
     startedAt=Date.now();endsAt=startedAt+DURATION*1000;
     updateTime();tick=setInterval(updateTime,1000);
-    testBox.scrollIntoView({behavior:'smooth',block:'start'});
+    body.scrollTop=0;
   });
   form.addEventListener('change',updateCount);
   form.addEventListener('submit',function(e){
@@ -560,7 +599,7 @@ a{text-decoration:none;color:inherit}
 
   function finish(){
     done=true;clearInterval(tick);testBox.hidden=true;doneBox.hidden=false;msg.textContent='';
-    doneBox.scrollIntoView({behavior:'smooth',block:'center'});
+    openModal();body.scrollTop=0;
   }
   function field(n){return form.elements[n].value.trim()}
   function choice(i){var c=form.querySelector('input[name="q'+(i+1)+'"]:checked');return c?c.value:''}
