@@ -56,14 +56,42 @@ a{text-decoration:none;color:inherit}
 .rkg-section h2 span{color:#c6283d}
 .rkg-intro{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:end}
 .rkg-intro p{color:#66768b;font-size:16px;line-height:1.75}
-.rkg-programs{background:#fff;max-width:none;padding-left:calc((100% - 1150px)/2);padding-right:calc((100% - 1150px)/2)}
-.rkg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:40px}
-.rkg-card{border:1px solid #dfe6ef;border-radius:16px;padding:26px;background:#fff;transition:.25s}
-.rkg-card:hover{transform:translateY(-6px);box-shadow:0 18px 45px rgba(16,42,86,.11)}
-.rkg-card b{font-size:10px;color:#97a6b8}
-.rkg-card h3{font-size:27px;margin:48px 0 6px}
-.rkg-card p{font-size:12px;color:#66768b;line-height:1.65}
-.rkg-card a{display:inline-block;color:#c6283d;font-size:11px;font-weight:800;margin-top:15px}
+.rkg-talent{background:#fff;max-width:none;padding-left:calc((100% - 1150px)/2);padding-right:calc((100% - 1150px)/2)}
+.rkg-talent-head{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:end}
+.rkg-talent-head p{color:#66768b;font-size:15px;line-height:1.7;margin:0 0 22px}
+.rkg-tse-meta{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #dfe6ef;border-radius:14px;margin:30px 0 22px;overflow:hidden}
+.rkg-tse-meta div{padding:16px 18px;border-right:1px solid #dfe6ef}
+.rkg-tse-meta div:last-child{border-right:0}
+.rkg-tse-meta strong{display:block;font-size:24px;color:#102a56}
+.rkg-tse-meta span{font-size:11px;font-weight:700;color:#66768b}
+.rkg-tse{border:1px solid #dfe6ef;border-radius:18px;padding:28px;box-shadow:0 18px 55px rgba(16,42,86,.08);background:#fff}
+.rkg-tse h3{font-size:20px;margin:0 0 14px;color:#102a56}
+.rkg-tse-rules{margin:0 0 26px;padding:16px 18px 16px 34px;background:#f4f7fb;border-radius:12px;color:#4b6079;font-size:13px;line-height:1.8}
+.rkg-tse-fields{display:grid;grid-template-columns:1fr 1fr;gap:4px 18px}
+.rkg-tse-fields .rkg-tse-wide{grid-column:1/-1}
+.rkg-tse label{display:block;font-size:11px;font-weight:800;color:#4b6079;margin:10px 0}
+.rkg-tse input[type=text],.rkg-tse input[type=tel],.rkg-tse textarea{width:100%;padding:13px;border:1px solid #ccd7e3;border-radius:8px;margin-top:6px;background:#fbfcfe;font:inherit;font-size:14px;color:#102a56}
+.rkg-tse textarea{min-height:70px;resize:vertical}
+.rkg-tse input:focus,.rkg-tse textarea:focus{outline:2px solid #c6283d;outline-offset:-1px;border-color:#c6283d}
+.rkg-tse-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;background:#c6283d;color:#fff;padding:14px 22px;border-radius:8px;font-weight:800;font-size:14px;cursor:pointer;margin-top:18px}
+.rkg-tse-btn:disabled{opacity:.6;cursor:wait}
+.rkg-tse-bar{position:sticky;top:83px;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:12px;background:#102a56;color:#fff;border-radius:12px;padding:12px 18px;margin-bottom:22px;font-size:13px;font-weight:700}
+.rkg-tse-bar b{font-size:20px;font-variant-numeric:tabular-nums}
+.rkg-tse-bar.is-low{background:#c6283d}
+.rkg-tse-qs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.rkg-q{border:1px solid #dfe6ef;border-radius:14px;padding:18px;margin:0;min-width:0}
+.rkg-q legend{float:left;width:100%;padding:0;margin-bottom:12px;font-size:14px;font-weight:700;color:#102a56;line-height:1.5}
+.rkg-q legend em{font-style:normal;color:#c6283d;margin-right:6px}
+.rkg-q-grid{clear:both;display:inline-grid;grid-template-columns:repeat(3,38px);gap:4px;margin:0 0 12px;font-weight:700;color:#102a56;text-align:center}
+.rkg-q-opts{clear:both;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.rkg-q-opts label{margin:0;display:flex;align-items:center;gap:8px;border:1px solid #dfe6ef;border-radius:9px;padding:10px 12px;font-size:13px;font-weight:600;color:#33475f;cursor:pointer}
+.rkg-q-opts label:hover{border-color:#9fb2c8}
+.rkg-q-opts input{accent-color:#c6283d;margin:0}
+.rkg-q-opts label:has(input:checked){border-color:#c6283d;background:#fdf1f3;color:#102a56}
+.rkg-tse-msg{margin:14px 0 0;font-size:13px;font-weight:700;color:#c6283d;min-height:1.2em}
+.rkg-tse-done{text-align:center;padding:30px 10px}
+.rkg-tse-done strong{display:block;font-size:30px;color:#102a56;margin-bottom:8px}
+.rkg-tse-done p{color:#66768b;font-size:15px;line-height:1.7;margin:0}
 .rkg-stats{display:grid;grid-template-columns:repeat(4,1fr);background:#102a56;color:#fff}
 .rkg-stats div{padding:33px;text-align:center;border-right:1px solid rgba(255,255,255,.12)}
 .rkg-stats strong{display:block;font-size:32px}
@@ -120,8 +148,8 @@ a{text-decoration:none;color:inherit}
 .rkg-top{justify-content:center}.rkg-top span:last-child{display:none}
 .rkg-links{display:none}.rkg-nav{padding:12px 18px}
 .rkg-caption{width:38%;bottom:14%}
-.rkg-programs{padding-left:25px;padding-right:25px}
-.rkg-grid{grid-template-columns:1fr 1fr}.rkg-reasons{grid-template-columns:1fr 1fr}
+.rkg-talent{padding-left:25px;padding-right:25px}.rkg-talent-head{grid-template-columns:1fr;gap:0}.rkg-tse-qs{grid-template-columns:1fr}
+.rkg-reasons{grid-template-columns:1fr 1fr}
 .rkg-stats{grid-template-columns:1fr 1fr}.rkg-campus-inner,.rkg-method,.rkg-admission-grid{grid-template-columns:1fr;gap:40px}
 .rkg-footer-top,.rkg-footer-bottom{display:grid}
 }
@@ -136,8 +164,8 @@ a{text-decoration:none;color:inherit}
 }
 @media(max-width:560px){
 .rkg-brand{min-width:0}.rkg-brand img{width:48px;height:48px}.rkg-brand strong{font-size:16px}
-.rkg-grid,.rkg-reasons{grid-template-columns:1fr}.rkg-stats strong{font-size:25px}
-.rkg-section{padding:70px 18px}.rkg-programs,.rkg-admission{padding-left:18px;padding-right:18px}
+.rkg-reasons{grid-template-columns:1fr}.rkg-tse{padding:20px 16px}.rkg-tse-fields,.rkg-q-opts{grid-template-columns:1fr}.rkg-tse-meta{grid-template-columns:1fr 1fr}.rkg-tse-meta div:nth-child(2){border-right:0}.rkg-tse-meta div:nth-child(-n+2){border-bottom:1px solid #dfe6ef}.rkg-tse-bar{top:74px}.rkg-stats strong{font-size:25px}
+.rkg-section{padding:70px 18px}.rkg-talent,.rkg-admission{padding-left:18px;padding-right:18px}
 .rkg-cta{margin:0 16px 50px;padding:38px 25px;display:block}.rkg-cta .rkg-btn{margin-top:22px}
 .rkg-two{grid-template-columns:1fr}.rkg-steps{grid-template-columns:1fr 1fr}
 }
@@ -167,8 +195,8 @@ a{text-decoration:none;color:inherit}
   </a>
   <div class="rkg-links">
     <a href="#rkg-home">Home</a>
-    <a href="#rkg-programs">Classroom</a>
-    <a href="#rkg-admission">Scholarship</a>
+    <a href="#rkg-why">Classroom</a>
+    <a href="#rkg-talent">Scholarship</a>
     <a href="#rkg-campus">Facilities</a>
   </div>
   <a class="rkg-btn" href="#rkg-admission">Enquire →</a>
@@ -212,7 +240,7 @@ a{text-decoration:none;color:inherit}
       <p>Academic classes for 9th to 12th with focused preparation for IIT-JEE, NEET, NDA and Foundation, all under one roof.</p>
       <div class="rkg-actions">
         <a class="rkg-btn" href="#rkg-admission">Admission Open →</a>
-        <a class="rkg-ghost" href="#rkg-programs">Explore Programs →</a>
+        <a class="rkg-ghost" href="#rkg-talent">Take Talent Test →</a>
       </div>
     </div>
     <div class="rkg-cap" aria-hidden="true">
@@ -247,15 +275,57 @@ a{text-decoration:none;color:inherit}
   </div>
 </section>
 
-<section id="rkg-programs" class="rkg-section rkg-programs">
-  <div class="rkg-label">OUR CORE PROGRAMS</div>
-  <h2>Choose Your Path to <span>Success</span></h2>
-  <div class="rkg-grid">
-    <article class="rkg-card"><b>01 · ENGINEERING</b><h3>IIT-JEE</h3><p>Strong concepts, advanced problem solving, regular tests and expert mentorship for JEE preparation.</p><a href="#rkg-admission">Know More →</a></article>
-    <article class="rkg-card"><b>02 · MEDICAL</b><h3>NEET</h3><p>Focused preparation in Physics, Chemistry and Biology with revision, mock tests and guidance.</p><a href="#rkg-admission">Know More →</a></article>
-    <article class="rkg-card"><b>03 · DEFENCE</b><h3>NDA</h3><p>Academic and written-exam preparation supported by discipline, practice and structured guidance.</p><a href="#rkg-admission">Know More →</a></article>
-    <article class="rkg-card"><b>04 · EARLY PREP</b><h3>FOUNDATION</h3><p>Classes 9th–10th preparation designed to build a strong conceptual base for future competitive exams.</p><a href="#rkg-admission">Know More →</a></article>
+<section id="rkg-talent" class="rkg-section rkg-talent">
+  <div class="rkg-talent-head">
+    <div>
+      <div class="rkg-label">TALENT SEARCH EXAM</div>
+      <h2>Show Us Your <span>Talent</span></h2>
+    </div>
+    <p>Take the Radha Krishna Gurukulam Talent Search Exam online. Fill in your details, start the test and answer all 20 questions within 30 minutes.</p>
   </div>
+
+  <div class="rkg-tse-meta">
+    <div><strong>Class 9</strong><span>Exam for</span></div>
+    <div><strong>20</strong><span>Questions</span></div>
+    <div><strong>30 min</strong><span>Time allowed</span></div>
+    <div><strong>100</strong><span>Maximum marks</span></div>
+  </div>
+
+  <form id="rkg-tse" class="rkg-tse" novalidate>
+    <div id="rkg-tse-start">
+      <h3>Important Instructions</h3>
+      <ul class="rkg-tse-rules">
+        <li>The test contains exactly 20 multiple-choice questions with four options and a single correct answer.</li>
+        <li>All questions are compulsory. Each question carries 5 marks.</li>
+        <li>The 30-minute timer starts when you press <b>Start Test</b>. Your answers are submitted automatically when time runs out.</li>
+      </ul>
+      <h3>Student Details</h3>
+      <div class="rkg-tse-fields">
+        <label>Student Name<input type="text" name="name" required maxlength="80" autocomplete="name"></label>
+        <label>Father's Name<input type="text" name="father" required maxlength="80"></label>
+        <label>Contact No.<input type="tel" name="phone" required pattern="[+]?[0-9 ]{10,15}" maxlength="15" inputmode="tel" autocomplete="tel" placeholder="10-digit mobile number"></label>
+        <label>School<input type="text" name="school" required maxlength="120"></label>
+        <label class="rkg-tse-wide">Address<textarea name="address" required maxlength="250"></textarea></label>
+      </div>
+      <button type="button" class="rkg-tse-btn" id="rkg-tse-go">Start Test →</button>
+    </div>
+
+    <div id="rkg-tse-test" hidden>
+      <div class="rkg-tse-bar" id="rkg-tse-bar" role="timer" aria-live="off">
+        <span>Time left <b id="rkg-tse-time">30:00</b></span>
+        <span id="rkg-tse-count">Answered 0 / 20</span>
+      </div>
+      <div class="rkg-tse-qs" id="rkg-tse-qs"></div>
+      <button type="submit" class="rkg-tse-btn" id="rkg-tse-submit">Submit Answers →</button>
+    </div>
+
+    <p class="rkg-tse-msg" id="rkg-tse-msg" role="alert"></p>
+
+    <div class="rkg-tse-done" id="rkg-tse-done" hidden>
+      <strong>Thank you!</strong>
+      <p>Your answers have been submitted. Our team will contact you with your result.</p>
+    </div>
+  </form>
 </section>
 
 <div class="rkg-stats">
@@ -405,6 +475,106 @@ a{text-decoration:none;color:inherit}
   });
   document.addEventListener('visibilitychange',function(){if(document.hidden)stop();else start()});
   start();
+})();
+</script>
+<script>
+(function(){
+  // Paste the Google Apps Script web app URL here (see google-apps-script/README.md).
+  var TSE_ENDPOINT='';
+  var DURATION=30*60;
+  // Answers are not stored here: the Apps Script scores each submission.
+  var QUESTIONS=[
+    {q:'Find the next number in the series: 2, 6, 12, 20, 30, ?',o:['40','42','44','46']},
+    {q:'If A = 1, B = 2, C = 3, …, Z = 26, then the value of LEARN is:',o:['50','56','58','60']},
+    {q:'Find the odd one out:',o:['Apple','Mango','Carrot','Banana']},
+    {q:'If 5x − 3 = 22, then x = ?',o:['4','5','6','7']},
+    {q:'Choose the word that is most similar in meaning to “Eloquent”.',o:['Silent','Fluent','Angry','Confused']},
+    {q:'Find the next letter in the series: A, C, F, J, O, ?',o:['S','T','U','V']},
+    {q:'3 : 7 :: 12 : ?',o:['16','18','21','28']},
+    {q:'What is 15% of 200?',o:['20','25','30','35']},
+    {q:'Choose the word opposite in meaning to “Ancient”.',o:['Old','Modern','Historic','Antique']},
+    {q:'If the perimeter of a square is 36 cm, the length of its side is:',o:['6 cm','8 cm','9 cm','12 cm']},
+    {q:'Find the missing number:',grid:['4','7','10','6','9','12','8','11','?'],o:['13','14','15','16']},
+    {q:'If CAT is coded as 3120, then DOG is coded as:',o:['4157','4158','4167','5168']},
+    {q:'Choose the pair that best represents a similar relationship: Bird : Fly :: Fish : ?',o:['Swim','Water','Scales','Fins']},
+    {q:'If 25% of a number is 40, then the number is:',o:['100','120','140','160']},
+    {q:'Find the odd one out:',o:['Triangle','Square','Circle','Cube']},
+    {q:'Choose the correctly spelled word:',o:['Recieve','Receive','Receve','Receiv']},
+    {q:'Find the next number: 1, 4, 9, 16, 25, ?',o:['30','32','36','49']},
+    {q:'Find the odd one out:',o:['11','13','15','17']},
+    {q:'If MONDAY is coded as NPOEBZ, then FRIDAY is coded as:',o:['GSJEBZ','GSJECZ','GRJEBZ','GSKEBZ']},
+    {q:'The average of 10, 20, 30 and 40 is:',o:['20','25','30','35']}
+  ];
+  var form=document.getElementById('rkg-tse');
+  if(!form)return;
+  var $=function(id){return document.getElementById(id)};
+  var startBox=$('rkg-tse-start'),testBox=$('rkg-tse-test'),doneBox=$('rkg-tse-done'),
+      msg=$('rkg-tse-msg'),timeEl=$('rkg-tse-time'),countEl=$('rkg-tse-count'),bar=$('rkg-tse-bar'),
+      submitBtn=$('rkg-tse-submit'),qsBox=$('rkg-tse-qs');
+  var L=['A','B','C','D'],endsAt=0,startedAt=0,tick=null,sending=false,done=false;
+
+  function el(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e}
+  QUESTIONS.forEach(function(item,i){
+    var fs=el('fieldset','rkg-q'),lg=el('legend');
+    lg.appendChild(el('em',null,(i+1)+'.'));lg.appendChild(document.createTextNode(item.q));fs.appendChild(lg);
+    if(item.grid){var g=el('div','rkg-q-grid');item.grid.forEach(function(c){g.appendChild(el('span',null,c))});fs.appendChild(g)}
+    var opts=el('div','rkg-q-opts');
+    item.o.forEach(function(text,j){
+      var lb=el('label'),inp=el('input');inp.type='radio';inp.name='q'+(i+1);inp.value=L[j];
+      lb.appendChild(inp);lb.appendChild(document.createTextNode('('+L[j]+') '+text));opts.appendChild(lb);
+    });
+    fs.appendChild(opts);qsBox.appendChild(fs);
+  });
+
+  function answered(){return form.querySelectorAll('.rkg-q input:checked').length}
+  function updateCount(){countEl.textContent='Answered '+answered()+' / '+QUESTIONS.length}
+  function fmt(sec){var m=Math.floor(sec/60),r=sec%60;return(m<10?'0':'')+m+':'+(r<10?'0':'')+r}
+  function updateTime(){
+    var left=Math.max(0,Math.round((endsAt-Date.now())/1000));
+    timeEl.textContent=fmt(left);bar.classList.toggle('is-low',left<=300);
+    if(left<=0){clearInterval(tick);send(true)}
+  }
+
+  $('rkg-tse-go').addEventListener('click',function(){
+    if(!TSE_ENDPOINT){msg.textContent='The online test is not open yet. Please contact the institute.';return}
+    var fields=startBox.querySelectorAll('input,textarea');
+    for(var i=0;i<fields.length;i++){
+      fields[i].value=fields[i].value.trim();
+      if(!fields[i].checkValidity()){fields[i].reportValidity();return}
+    }
+    msg.textContent='';startBox.hidden=true;testBox.hidden=false;
+    startedAt=Date.now();endsAt=startedAt+DURATION*1000;
+    updateTime();tick=setInterval(updateTime,1000);
+    testBox.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+  form.addEventListener('change',updateCount);
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var left=QUESTIONS.length-answered();
+    if(left>0&&!confirm('You have '+left+' unanswered question'+(left>1?'s':'')+'. Submit anyway?'))return;
+    send(false);
+  });
+
+  function send(timeUp){
+    if(sending||done)return;
+    if(!TSE_ENDPOINT){msg.textContent='Online submission is not set up yet. Please contact the institute.';return}
+    sending=true;submitBtn.disabled=true;submitBtn.textContent='Submitting…';
+    msg.textContent=timeUp?'Time is up. Submitting your answers…':'';
+    var data=new URLSearchParams();
+    ['name','father','phone','school','address'].forEach(function(n){data.append(n,form.elements[n].value.trim())});
+    data.append('cls','9');
+    data.append('seconds',String(Math.round((Date.now()-startedAt)/1000)));
+    QUESTIONS.forEach(function(_,i){var c=form.querySelector('input[name="q'+(i+1)+'"]:checked');data.append('q'+(i+1),c?c.value:'')});
+    // no-cors: Apps Script does not send CORS headers, so the reply is unreadable;
+    // a network failure still rejects, which is what we need to know.
+    fetch(TSE_ENDPOINT,{method:'POST',mode:'no-cors',body:data}).then(function(){
+      done=true;clearInterval(tick);testBox.hidden=true;doneBox.hidden=false;msg.textContent='';
+      doneBox.scrollIntoView({behavior:'smooth',block:'center'});
+    }).catch(function(){
+      sending=false;submitBtn.disabled=false;submitBtn.textContent='Try Submitting Again →';
+      msg.textContent='Could not submit. Please check your internet connection and try again.';
+    });
+  }
 })();
 </script>
 </body>
