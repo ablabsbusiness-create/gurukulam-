@@ -66,15 +66,17 @@ a{text-decoration:none;color:inherit}
 .rkg-tse-meta span{font-size:11px;font-weight:700;color:#66768b}
 .rkg-tse{border:1px solid #dfe6ef;border-radius:18px;padding:28px;box-shadow:0 18px 55px rgba(16,42,86,.08);background:#fff}
 .rkg-tse h3{font-size:20px;margin:0 0 14px;color:#102a56}
-.rkg-tse-rules{margin:0 0 26px;padding:16px 18px 16px 34px;background:#f4f7fb;border-radius:12px;color:#4b6079;font-size:13px;line-height:1.8}
 .rkg-tse-fields{display:grid;grid-template-columns:1fr 1fr;gap:4px 18px}
 .rkg-tse-fields .rkg-tse-wide{grid-column:1/-1}
 .rkg-tse label{display:block;font-size:11px;font-weight:800;color:#4b6079;margin:10px 0}
 .rkg-tse input[type=text],.rkg-tse input[type=tel],.rkg-tse textarea{width:100%;padding:13px;border:1px solid #ccd7e3;border-radius:8px;margin-top:6px;background:#fbfcfe;font:inherit;font-size:14px;color:#102a56}
 .rkg-tse textarea{min-height:70px;resize:vertical}
 .rkg-tse input:focus,.rkg-tse textarea:focus{outline:2px solid #c6283d;outline-offset:-1px;border-color:#c6283d}
-.rkg-tse-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;background:#c6283d;color:#fff;padding:14px 22px;border-radius:8px;font-weight:800;font-size:14px;cursor:pointer;margin-top:18px}
-.rkg-tse-btn:disabled{opacity:.6;cursor:wait}
+.rkg-tse-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;background:linear-gradient(135deg,#dc3d53,#b51d32);color:#fff!important;padding:14px 26px;border-radius:999px;font:inherit;font-weight:800;font-size:14px;letter-spacing:.2px;cursor:pointer;margin-top:18px;box-shadow:0 10px 24px -10px rgba(198,40,61,.75);transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}
+.rkg-tse-btn:hover{transform:translateY(-2px);filter:brightness(1.06);box-shadow:0 16px 30px -12px rgba(198,40,61,.85)}
+.rkg-tse-btn:active{transform:translateY(0);box-shadow:0 6px 16px -8px rgba(198,40,61,.75)}
+.rkg-tse-btn:focus-visible{outline:3px solid rgba(198,40,61,.35);outline-offset:3px}
+.rkg-tse-btn:disabled{opacity:.6;cursor:wait;transform:none}
 .rkg-tse-bar{position:sticky;top:83px;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:12px;background:#102a56;color:#fff;border-radius:12px;padding:12px 18px;margin-bottom:22px;font-size:13px;font-weight:700}
 .rkg-tse-bar b{font-size:20px;font-variant-numeric:tabular-nums}
 .rkg-tse-bar.is-low{background:#c6283d}
@@ -89,6 +91,38 @@ a{text-decoration:none;color:inherit}
 .rkg-q-opts input{accent-color:#c6283d;margin:0}
 .rkg-q-opts label:has(input:checked){border-color:#c6283d;background:#fdf1f3;color:#102a56}
 .rkg-tse-msg{margin:14px 0 0;font-size:13px;font-weight:700;color:#c6283d;min-height:1.2em}
+.rkg-tse [hidden]{display:none!important}
+.rkg-tse-cta{display:grid;grid-template-columns:1fr auto;align-items:center;gap:36px;padding:28px 30px;border-radius:20px;background:linear-gradient(135deg,#102a56 0%,#1b3d72 100%);color:#fff;box-shadow:0 24px 50px -24px rgba(16,42,86,.55);position:relative;overflow:hidden}
+.rkg-tse-cta:after{content:"";position:absolute;right:-80px;top:-80px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(198,40,61,.35),rgba(198,40,61,0) 70%);pointer-events:none}
+.rkg-tse-how{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rkg-tse-how li{display:flex;align-items:center;gap:12px}
+.rkg-tse-how i{width:44px;height:44px;flex:0 0 auto;border-radius:12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);display:grid;place-items:center}
+.rkg-tse-how svg{width:21px;height:21px;fill:none;stroke:#ff9aa7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.rkg-tse-how strong{display:block;font-size:14px}
+.rkg-tse-how small{display:block;font-size:12px;color:#b9c8dc;margin-top:2px}
+.rkg-tse-cta .rkg-tse-open{position:relative;z-index:1;box-shadow:0 14px 30px -12px rgba(0,0,0,.55)}
+@media(max-width:1100px){.rkg-tse-cta{grid-template-columns:1fr;gap:24px}.rkg-tse-cta .rkg-tse-open{justify-self:start}}
+.rkg-tse-open{margin-top:0;padding:10px 10px 10px 10px;gap:14px;text-align:left}
+.rkg-tse-open-ic{width:48px;height:48px;flex:0 0 auto;border-radius:50%;background:rgba(255,255,255,.17);display:grid;place-items:center}
+.rkg-tse-open-ic svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.rkg-tse-open-txt{flex:1 1 auto}
+.rkg-tse-open-txt b{display:block;font-size:17px;line-height:1.2}
+.rkg-tse-open-txt small{display:block;font-size:12px;font-weight:600;opacity:.85;margin-top:3px}
+.rkg-tse-open-arw{width:42px;height:42px;flex:0 0 auto;margin-left:14px;border-radius:50%;background:#fff;color:#c6283d;display:grid;place-items:center;font-size:20px;transition:transform .2s ease}
+.rkg-tse-open:hover .rkg-tse-open-arw{transform:translateX(4px)}
+@media(prefers-reduced-motion:reduce){.rkg-tse-btn,.rkg-tse-open-arw{transition:none}.rkg-tse-btn:hover,.rkg-tse-open:hover .rkg-tse-open-arw{transform:none}}
+.rkg-modal{margin:auto;inset:0;width:min(980px,calc(100% - 32px));max-width:none;max-height:calc(100dvh - 32px);padding:0;border:0;border-radius:18px;box-shadow:0 30px 90px rgba(11,31,68,.35);color:#102a56;overflow:hidden}
+.rkg-modal[open]{display:flex;flex-direction:column}
+.rkg-modal::backdrop{background:rgba(11,31,68,.65)}
+.rkg-modal-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 22px;border-bottom:1px solid #dfe6ef;background:#fff}
+.rkg-modal-head small{display:block;font-size:10px;font-weight:800;letter-spacing:1.6px;color:#c6283d}
+.rkg-modal-head strong{font-size:18px}
+.rkg-modal-x{width:40px;height:40px;flex:0 0 auto;border:1px solid #dfe6ef;border-radius:50%;background:#fff;font-size:24px;line-height:1;color:#102a56;cursor:pointer}
+.rkg-modal-x:hover{background:#f4f7fb}
+.rkg-modal-body{overflow:auto;overscroll-behavior:contain}
+.rkg-modal .rkg-tse{border:0;border-radius:0;box-shadow:none}
+.rkg-modal .rkg-tse-bar{top:0}
+html.rkg-modal-lock{overflow:hidden}
 .rkg-tse-done{text-align:center;padding:30px 10px}
 .rkg-tse-done strong{display:block;font-size:30px;color:#102a56;margin-bottom:8px}
 .rkg-tse-done p{color:#66768b;font-size:15px;line-height:1.7;margin:0}
@@ -97,31 +131,35 @@ a{text-decoration:none;color:inherit}
 .rkg-stats strong{display:block;font-size:32px}
 .rkg-stats span{font-size:10px;color:#aec2d9;text-transform:uppercase;letter-spacing:1px}
 .rkg-reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:40px}
-.rkg-reason{background:#fff;border:1px solid #dfe6ef;border-radius:15px;padding:25px;min-height:185px}
-.rkg-reason>b{color:#c6283d;font-size:11px}
-.rkg-reason h3{font-size:18px;margin-top:42px;margin-bottom:8px}
+.rkg-reason{background:#fff;border:1px solid #dfe6ef;border-radius:15px;padding:25px}
+.rkg-reason h3{font-size:18px;margin-bottom:8px}
 .rkg-reason p{font-size:12px;color:#66768b;line-height:1.6}
 .rkg-campus{background:#102a56;color:#fff}
 .rkg-campus-inner{max-width:1200px;margin:auto;padding:85px 25px;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
-.rkg-campus h2{color:#fff}
+.rkg-campus h2{color:#fff;font-size:clamp(36px,4.6vw,58px);line-height:1;letter-spacing:-2px;margin:12px 0 20px}
 .rkg-campus h2 span{color:#f19aa5}
 .rkg-campus p{color:#c4d3e4;line-height:1.7;font-size:15px}
 .rkg-campus-box{min-height:360px;border-radius:22px;padding:32px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(145deg,#183e70,#6799bb)}
-.rkg-campus-box strong{font-size:37px;line-height:1.02;margin-top:8px}
-.rkg-campus-box small{color:#d7e4ef;font-size:12px}
+.rkg-campus-box strong{font-size:37px;line-height:1.02;margin:10px 0 12px}
+.rkg-campus-box small{color:#d7e4ef;font-size:12px;line-height:1.5}
+.rkg-campus-box small:first-of-type{font-weight:800;letter-spacing:1.6px;font-size:10px}
 .rkg-method{display:grid;grid-template-columns:1fr .65fr;gap:75px;align-items:center}
-.rkg-steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #dfe6ef;margin-top:35px}
-.rkg-steps div{padding:15px 10px 0 0;border-right:1px solid #dfe6ef}
-.rkg-steps b{color:#c6283d;font-size:10px}
-.rkg-steps span{display:block;font-weight:800;margin-top:8px}
-.rkg-method-card{min-height:300px;background:#eaf0f6;border-radius:20px;padding:32px;display:flex;flex-direction:column;justify-content:flex-end}
+.rkg-steps{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.rkg-steps div{display:flex;align-items:center;gap:9px;padding:11px 18px;border:1px solid #dfe6ef;border-radius:999px;background:#fff;box-shadow:0 6px 16px -10px rgba(16,42,86,.25)}
+.rkg-steps div:before{content:"";width:8px;height:8px;border-radius:50%;background:#c6283d}
+.rkg-steps span{display:block;font-weight:800;font-size:14px}
+.rkg-method-card{min-height:300px;background:linear-gradient(145deg,#183e70,#6799bb);color:#fff;border-radius:20px;padding:32px;display:flex;flex-direction:column;justify-content:flex-end}
 .rkg-method-card strong{font-size:31px;line-height:1.05}
-.rkg-method-card p{font-size:12px;color:#66768b;margin-top:12px;line-height:1.6}
+.rkg-photo-box{position:relative;overflow:hidden}
+.rkg-photo-box>*{position:relative;z-index:2}
+.rkg-photo-box>.rkg-box-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.rkg-photo-box:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(11,31,68,.94) 0%,rgba(11,31,68,.55) 45%,rgba(11,31,68,.08) 100%)}
+.rkg-method-card p{font-size:13px;color:#dbe5f1;margin-top:12px;line-height:1.6}
 .rkg-cta{margin:0 5% 70px;background:#c6283d;border-radius:20px;padding:48px 7%;display:flex;justify-content:space-between;align-items:center;gap:30px;color:#fff}
 .rkg-cta h2{color:#fff;font-size:clamp(34px,4vw,54px);margin:8px 0}
 .rkg-cta em{font-style:normal;color:#ffdce1}
 .rkg-cta p{font-size:13px;color:#ffe3e7}
-.rkg-cta .rkg-btn{background:#fff;color:#c6283d!important}
+.rkg-cta .rkg-btn{background:#fff;color:#c6283d!important;white-space:nowrap;flex:0 0 auto}
 .rkg-admission{background:#fff;max-width:none;padding-left:calc((100% - 1150px)/2);padding-right:calc((100% - 1150px)/2)}
 .rkg-admission-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px}
 .rkg-contact{display:inline-block;color:#c6283d;font-size:25px;font-weight:800;margin-top:25px}
@@ -152,7 +190,7 @@ a{text-decoration:none;color:inherit}
 .rkg-caption{width:38%;bottom:14%}
 .rkg-talent{padding-left:25px;padding-right:25px}.rkg-talent-head{grid-template-columns:1fr;gap:0}.rkg-tse-qs{grid-template-columns:1fr}
 .rkg-reasons{grid-template-columns:1fr 1fr}
-.rkg-stats{grid-template-columns:1fr 1fr}.rkg-campus-inner,.rkg-method,.rkg-admission-grid{grid-template-columns:1fr;gap:40px}
+.rkg-stats{grid-template-columns:1fr 1fr}.rkg-campus-inner,.rkg-method,.rkg-admission-grid{grid-template-columns:1fr;gap:40px}.rkg-intro{grid-template-columns:1fr;gap:10px}
 .rkg-footer-top,.rkg-footer-bottom{display:grid}
 }
 @media(max-width:760px){
@@ -166,10 +204,10 @@ a{text-decoration:none;color:inherit}
 }
 @media(max-width:560px){
 .rkg-brand{min-width:0}.rkg-brand img{width:48px;height:48px}.rkg-brand strong{font-size:16px}
-.rkg-reasons{grid-template-columns:1fr}.rkg-tse{padding:20px 16px}.rkg-tse-fields,.rkg-q-opts{grid-template-columns:1fr}.rkg-tse-meta{grid-template-columns:1fr 1fr}.rkg-tse-meta div:nth-child(2){border-right:0}.rkg-tse-meta div:nth-child(-n+2){border-bottom:1px solid #dfe6ef}.rkg-tse-bar{top:74px}.rkg-stats strong{font-size:25px}
+.rkg-reasons{grid-template-columns:1fr}.rkg-modal{width:100%;max-height:100dvh;height:100dvh;border-radius:0}.rkg-modal-head{padding:12px 16px}.rkg-modal-head strong{font-size:16px}.rkg-tse-cta{padding:22px 18px}.rkg-tse-how{grid-template-columns:1fr;gap:14px}.rkg-tse-cta .rkg-tse-open{justify-self:stretch}.rkg-tse-open{width:100%;gap:12px;padding:8px}.rkg-tse-open-ic{width:42px;height:42px}.rkg-tse-open-ic svg{width:20px;height:20px}.rkg-tse-open-txt b{font-size:15px}.rkg-tse-open-txt small{font-size:11.5px}.rkg-tse-open-arw{width:38px;height:38px;margin-left:4px;font-size:18px}.rkg-tse{padding:20px 16px}.rkg-tse-fields,.rkg-q-opts{grid-template-columns:1fr}.rkg-tse-meta{grid-template-columns:1fr 1fr}.rkg-tse-meta div:nth-child(2){border-right:0}.rkg-tse-meta div:nth-child(-n+2){border-bottom:1px solid #dfe6ef}.rkg-tse-bar{top:74px}.rkg-stats strong{font-size:25px}
 .rkg-section{padding:70px 18px}.rkg-talent,.rkg-admission{padding-left:18px;padding-right:18px}
 .rkg-cta{margin:0 16px 50px;padding:38px 25px;display:block}.rkg-cta .rkg-btn{margin-top:22px}
-.rkg-two{grid-template-columns:1fr}.rkg-steps{grid-template-columns:1fr 1fr}
+.rkg-two{grid-template-columns:1fr;gap:0}
 }
 </style>
 </head>
@@ -242,7 +280,7 @@ a{text-decoration:none;color:inherit}
       <p>Academic classes for 9th to 12th with focused preparation for IIT-JEE, NEET, NDA and Foundation, all under one roof.</p>
       <div class="rkg-actions">
         <a class="rkg-btn" href="#rkg-admission">Admission Open →</a>
-        <a class="rkg-ghost" href="#rkg-talent">Take Talent Test →</a>
+        <a class="rkg-ghost" href="#rkg-talent" data-tse-open>Take Talent Test →</a>
       </div>
     </div>
     <div class="rkg-cap" aria-hidden="true">
@@ -293,14 +331,27 @@ a{text-decoration:none;color:inherit}
     <div><strong>100</strong><span>Maximum marks</span></div>
   </div>
 
+  <div class="rkg-tse-cta">
+    <ul class="rkg-tse-how">
+      <li><i aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></i><span><strong>Fill your details</strong><small>Name, school and contact</small></span></li>
+      <li><i aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg></i><span><strong>Answer 20 questions</strong><small>Within 30 minutes</small></span></li>
+      <li><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg></i><span><strong>Submit your answers</strong><small>Our team shares your result</small></span></li>
+    </ul>
+    <button type="button" class="rkg-tse-btn rkg-tse-open" id="rkg-tse-open">
+      <span class="rkg-tse-open-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4.5V3h6v1.5M9 10h6M9 14h6M9 18h3"/></svg></span>
+      <span class="rkg-tse-open-txt"><b>Start Talent Search Exam</b><small>20 questions · 30 minutes</small></span>
+      <span class="rkg-tse-open-arw" aria-hidden="true">→</span>
+    </button>
+  </div>
+
+  <dialog class="rkg-modal" id="rkg-tse-modal" aria-labelledby="rkg-tse-title">
+  <div class="rkg-modal-head">
+    <div><small>RADHA KRISHNA GURUKULAM</small><strong id="rkg-tse-title">Talent Search Exam · Class 9</strong></div>
+    <button type="button" class="rkg-modal-x" id="rkg-tse-close" aria-label="Close">&times;</button>
+  </div>
+  <div class="rkg-modal-body" id="rkg-tse-body">
   <form id="rkg-tse" class="rkg-tse" novalidate>
     <div id="rkg-tse-start">
-      <h3>Important Instructions</h3>
-      <ul class="rkg-tse-rules">
-        <li>The test contains exactly 20 multiple-choice questions with four options and a single correct answer.</li>
-        <li>All questions are compulsory. Each question carries 5 marks.</li>
-        <li>The 30-minute timer starts when you press <b>Start Test</b>. Your answers are submitted automatically when time runs out.</li>
-      </ul>
       <h3>Student Details</h3>
       <div class="rkg-tse-fields">
         <label>Student Name<input type="text" name="name" required maxlength="80" autocomplete="name"></label>
@@ -325,9 +376,12 @@ a{text-decoration:none;color:inherit}
 
     <div class="rkg-tse-done" id="rkg-tse-done" hidden>
       <strong>Thank you!</strong>
-      <p>Your answers have been submitted. Our team will contact you with your result.</p>
+      <p id="rkg-tse-done-text">Your answers have been submitted. Our team will contact you with your result.</p>
+      <a class="rkg-tse-btn" id="rkg-tse-wa" target="_blank" rel="noopener" hidden>Send Answers on WhatsApp →</a>
     </div>
   </form>
+  </div>
+  </dialog>
 </section>
 
 <div class="rkg-stats">
@@ -341,12 +395,12 @@ a{text-decoration:none;color:inherit}
   <div class="rkg-label">WHY RADHA KRISHNA GURUKULAM?</div>
   <h2>Built around <span>student success.</span></h2>
   <div class="rkg-reasons">
-    <article class="rkg-reason"><b>01</b><h3>Qualified Faculty Team</h3><p>Experienced faculty focused on academic clarity and competitive preparation.</p></article>
-    <article class="rkg-reason"><b>02</b><h3>Concept Clarity</h3><p>Learning begins with strong fundamentals before moving toward advanced application.</p></article>
-    <article class="rkg-reason"><b>03</b><h3>Proven Results</h3><p>A structured approach that keeps preparation measurable through regular assessments.</p></article>
-    <article class="rkg-reason"><b>04</b><h3>Personal Mentorship</h3><p>Individual attention and guidance help students maintain a focused routine.</p></article>
-    <article class="rkg-reason"><b>05</b><h3>Regular Test Series</h3><p>Regular testing provides practice, feedback and opportunities to improve.</p></article>
-    <article class="rkg-reason"><b>06</b><h3>Discipline & Values</h3><p>Academic growth is supported by discipline, responsibility and holistic development.</p></article>
+    <article class="rkg-reason"><h3>Qualified Faculty Team</h3><p>Experienced faculty focused on academic clarity and competitive preparation.</p></article>
+    <article class="rkg-reason"><h3>Concept Clarity</h3><p>Learning begins with strong fundamentals before moving toward advanced application.</p></article>
+    <article class="rkg-reason"><h3>Proven Results</h3><p>A structured approach that keeps preparation measurable through regular assessments.</p></article>
+    <article class="rkg-reason"><h3>Personal Mentorship</h3><p>Individual attention and guidance help students maintain a focused routine.</p></article>
+    <article class="rkg-reason"><h3>Regular Test Series</h3><p>Regular testing provides practice, feedback and opportunities to improve.</p></article>
+    <article class="rkg-reason"><h3>Discipline & Values</h3><p>Academic growth is supported by discipline, responsibility and holistic development.</p></article>
   </div>
 </section>
 
@@ -358,7 +412,9 @@ a{text-decoration:none;color:inherit}
       <p>From schooling and competitive preparation to hostel, mess and canteen facilities, Gurukulam is designed to give students a structured environment for focused learning and daily life.</p>
       <a class="rkg-btn" style="margin-top:25px" href="#rkg-admission">Enquire About Facilities →</a>
     </div>
-    <div class="rkg-campus-box">
+    <div class="rkg-campus-box rkg-photo-box">
+      <!-- Stock photo placeholder: replace with a campus / hostel photo -->
+      <img class="rkg-box-img" src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1000&q=70" alt="" loading="lazy" onerror="this.remove()">
       <small>THE GURUKULAM EXPERIENCE</small>
       <strong>Study. Stay. Grow.</strong>
       <small>Academic learning · Competitive preparation · Residential support</small>
@@ -369,17 +425,19 @@ a{text-decoration:none;color:inherit}
 <section class="rkg-section">
   <div class="rkg-method">
     <div>
-      <div class="rkg-label">OUR APPROACH</div>
-      <h2>Understand. <span>Practise.</span> Improve.</h2>
-      <p style="color:#66768b;line-height:1.7">Students learn concepts, practise consistently, test regularly and use performance feedback to improve their preparation.</p>
+      <div class="rkg-label">OUR 4P OF SUCCESS</div>
+      <h2>Understand. <span>Practise.</span> Improve. <span>Perform.</span></h2>
+      <p style="color:#66768b;line-height:1.7">Students understand concepts clearly, practise consistently, improve through regular tests and feedback, and perform with confidence when it matters.</p>
       <div class="rkg-steps">
-        <div><b>01</b><span>Learn</span></div>
-        <div><b>02</b><span>Practise</span></div>
-        <div><b>03</b><span>Test</span></div>
-        <div><b>04</b><span>Analyse</span></div>
+        <div><span>Understand</span></div>
+        <div><span>Practise</span></div>
+        <div><span>Improve</span></div>
+        <div><span>Perform</span></div>
       </div>
     </div>
-    <div class="rkg-method-card">
+    <div class="rkg-method-card rkg-photo-box">
+      <!-- Stock photo placeholder: replace with a classroom photo -->
+      <img class="rkg-box-img" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=70" alt="" loading="lazy" onerror="this.remove()">
       <strong>Daily learning +<br>regular progress</strong>
       <p>A disciplined routine creates room for concepts, revision, doubt solving and test practice.</p>
     </div>
@@ -483,7 +541,9 @@ a{text-decoration:none;color:inherit}
 <script>
 (function(){
   // Paste the Google Apps Script web app URL here (see google-apps-script/README.md).
+  // While it is empty, answers are sent to the institute on WhatsApp instead.
   var TSE_ENDPOINT='';
+  var TSE_WHATSAPP='918738885544';
   var DURATION=30*60;
   // Answers are not stored here: the Apps Script scores each submission.
   var QUESTIONS=[
@@ -515,6 +575,22 @@ a{text-decoration:none;color:inherit}
       msg=$('rkg-tse-msg'),timeEl=$('rkg-tse-time'),countEl=$('rkg-tse-count'),bar=$('rkg-tse-bar'),
       submitBtn=$('rkg-tse-submit'),qsBox=$('rkg-tse-qs');
   var L=['A','B','C','D'],endsAt=0,startedAt=0,tick=null,sending=false,done=false;
+  var modal=$('rkg-tse-modal'),body=$('rkg-tse-body');
+  function openModal(){
+    if(!modal.open){modal.showModal();document.documentElement.classList.add('rkg-modal-lock')}
+  }
+  function closeModal(){
+    // Leaving mid-test keeps the answers and the timer; reopening resumes.
+    if(tick&&!done&&!confirm('Your test is in progress and the timer keeps running. Close it for now?'))return;
+    modal.close();
+  }
+  modal.addEventListener('close',function(){document.documentElement.classList.remove('rkg-modal-lock')});
+  modal.addEventListener('cancel',function(e){e.preventDefault();closeModal()});
+  $('rkg-tse-open').addEventListener('click',openModal);
+  [].forEach.call(document.querySelectorAll('[data-tse-open]'),function(a){
+    a.addEventListener('click',function(e){e.preventDefault();openModal()});
+  });
+  $('rkg-tse-close').addEventListener('click',closeModal);
 
   function el(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e}
   QUESTIONS.forEach(function(item,i){
@@ -539,7 +615,6 @@ a{text-decoration:none;color:inherit}
   }
 
   $('rkg-tse-go').addEventListener('click',function(){
-    if(!TSE_ENDPOINT){msg.textContent='The online test is not open yet. Please contact the institute.';return}
     var fields=startBox.querySelectorAll('input,textarea');
     for(var i=0;i<fields.length;i++){
       fields[i].value=fields[i].value.trim();
@@ -548,7 +623,7 @@ a{text-decoration:none;color:inherit}
     msg.textContent='';startBox.hidden=true;testBox.hidden=false;
     startedAt=Date.now();endsAt=startedAt+DURATION*1000;
     updateTime();tick=setInterval(updateTime,1000);
-    testBox.scrollIntoView({behavior:'smooth',block:'start'});
+    body.scrollTop=0;
   });
   form.addEventListener('change',updateCount);
   form.addEventListener('submit',function(e){
@@ -558,9 +633,26 @@ a{text-decoration:none;color:inherit}
     send(false);
   });
 
+  function finish(){
+    done=true;clearInterval(tick);testBox.hidden=true;doneBox.hidden=false;msg.textContent='';
+    openModal();body.scrollTop=0;
+  }
+  function field(n){return form.elements[n].value.trim()}
+  function choice(i){var c=form.querySelector('input[name="q'+(i+1)+'"]:checked');return c?c.value:''}
+  function sendWhatsApp(){
+    var secs=Math.round((Date.now()-startedAt)/1000);
+    var text='Talent Search Exam (Class 9) - Radha Krishna Gurukulam'+
+      '\nStudent: '+field('name')+'\nFather: '+field('father')+'\nContact: '+field('phone')+
+      '\nSchool: '+field('school')+'\nAddress: '+field('address')+'\nTime taken: '+fmt(Math.min(secs,DURATION))+
+      '\nAnswers: '+QUESTIONS.map(function(_,i){return (i+1)+'-'+(choice(i)||'_')}).join(', ');
+    var wa=$('rkg-tse-wa');
+    wa.href='https://wa.me/'+TSE_WHATSAPP+'?text='+encodeURIComponent(text);wa.hidden=false;
+    $('rkg-tse-done-text').textContent='One last step: tap the button below to send your answers to Radha Krishna Gurukulam on WhatsApp.';
+    finish();
+  }
   function send(timeUp){
     if(sending||done)return;
-    if(!TSE_ENDPOINT){msg.textContent='Online submission is not set up yet. Please contact the institute.';return}
+    if(!TSE_ENDPOINT){sendWhatsApp();return}
     sending=true;submitBtn.disabled=true;submitBtn.textContent='Submitting…';
     msg.textContent=timeUp?'Time is up. Submitting your answers…':'';
     var data=new URLSearchParams();
@@ -570,10 +662,7 @@ a{text-decoration:none;color:inherit}
     QUESTIONS.forEach(function(_,i){var c=form.querySelector('input[name="q'+(i+1)+'"]:checked');data.append('q'+(i+1),c?c.value:'')});
     // no-cors: Apps Script does not send CORS headers, so the reply is unreadable;
     // a network failure still rejects, which is what we need to know.
-    fetch(TSE_ENDPOINT,{method:'POST',mode:'no-cors',body:data}).then(function(){
-      done=true;clearInterval(tick);testBox.hidden=true;doneBox.hidden=false;msg.textContent='';
-      doneBox.scrollIntoView({behavior:'smooth',block:'center'});
-    }).catch(function(){
+    fetch(TSE_ENDPOINT,{method:'POST',mode:'no-cors',body:data}).then(finish).catch(function(){
       sending=false;submitBtn.disabled=false;submitBtn.textContent='Try Submitting Again →';
       msg.textContent='Could not submit. Please check your internet connection and try again.';
     });
