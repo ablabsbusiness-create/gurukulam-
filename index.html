@@ -143,6 +143,16 @@ html.rkg-modal-lock{overflow:hidden}
 .rkg-campus-box strong{font-size:37px;line-height:1.02;margin:10px 0 12px}
 .rkg-campus-box small{color:#d7e4ef;font-size:12px;line-height:1.5}
 .rkg-campus-box small:first-of-type{font-weight:800;letter-spacing:1.6px;font-size:10px}
+.rkg-facilities{max-width:1200px;margin:auto;padding:0 25px 85px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.rkg-facility{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:24px;display:flex;gap:16px;align-items:flex-start}
+.rkg-facility svg{flex:0 0 auto;width:44px;height:44px;padding:10px;border-radius:12px;background:#c6283d;fill:#fff}
+.rkg-facility h3{color:#fff;font-size:17px;margin-bottom:6px}
+.rkg-facility p{color:#c4d3e4;font-size:12px;line-height:1.6}
+.rkg-offer{display:inline-flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:14px}
+.rkg-offer span{background:#ffd34d;color:#102a56;border-radius:999px;padding:6px 12px;font-size:11px;font-weight:800;letter-spacing:.6px}
+.rkg-offer span+span{background:#fff;color:#c6283d}
+.rkg-scholar{margin-top:22px;background:#fff4d6;border:1px solid #f3d27a;border-radius:14px;padding:16px 18px;color:#102a56;font-size:13px;line-height:1.55}
+.rkg-scholar strong{display:block;color:#c6283d;font-size:20px;margin-bottom:2px}
 .rkg-method{display:grid;grid-template-columns:1fr .65fr;gap:75px;align-items:center}
 .rkg-steps{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
 .rkg-steps div{display:flex;align-items:center;gap:9px;padding:11px 18px;border:1px solid #dfe6ef;border-radius:999px;background:#fff;box-shadow:0 6px 16px -10px rgba(16,42,86,.25)}
@@ -190,6 +200,7 @@ html.rkg-modal-lock{overflow:hidden}
 .rkg-caption{width:38%;bottom:14%}
 .rkg-talent{padding-left:25px;padding-right:25px}.rkg-talent-head{grid-template-columns:1fr;gap:0}.rkg-tse-qs{grid-template-columns:1fr}
 .rkg-reasons{grid-template-columns:1fr 1fr}
+.rkg-facilities{grid-template-columns:1fr 1fr}
 .rkg-campus-inner,.rkg-method,.rkg-admission-grid{grid-template-columns:1fr;gap:40px}.rkg-intro{grid-template-columns:1fr;gap:10px}
 .rkg-footer-top,.rkg-footer-bottom{display:grid}
 }
@@ -204,7 +215,7 @@ html.rkg-modal-lock{overflow:hidden}
 }
 @media(max-width:560px){
 .rkg-brand{min-width:0}.rkg-brand img{width:48px;height:48px}.rkg-brand strong{font-size:16px}
-.rkg-reasons{grid-template-columns:1fr}.rkg-modal{width:100%;max-height:100dvh;height:100dvh;border-radius:0}.rkg-modal-head{padding:12px 16px}.rkg-modal-head strong{font-size:16px}.rkg-tse-cta{padding:22px 18px}.rkg-tse-how{grid-template-columns:1fr;gap:14px}.rkg-tse-cta .rkg-tse-open{justify-self:stretch}.rkg-tse-open{width:100%;gap:12px;padding:8px}.rkg-tse-open-ic{width:42px;height:42px}.rkg-tse-open-ic svg{width:20px;height:20px}.rkg-tse-open-txt b{font-size:15px}.rkg-tse-open-txt small{font-size:11.5px}.rkg-tse-open-arw{width:38px;height:38px;margin-left:4px;font-size:18px}.rkg-tse{padding:20px 16px}.rkg-tse-fields,.rkg-q-opts{grid-template-columns:1fr}.rkg-tse-meta{grid-template-columns:1fr 1fr}.rkg-tse-meta div:nth-child(2){border-right:0}.rkg-tse-meta div:nth-child(-n+2){border-bottom:1px solid #dfe6ef}.rkg-tse-bar{top:74px}.rkg-stats{grid-template-columns:1fr}.rkg-stats div{padding:22px;border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}.rkg-stats div:last-child{border-bottom:0}.rkg-stats strong{font-size:25px}
+.rkg-reasons,.rkg-facilities{grid-template-columns:1fr}.rkg-modal{width:100%;max-height:100dvh;height:100dvh;border-radius:0}.rkg-modal-head{padding:12px 16px}.rkg-modal-head strong{font-size:16px}.rkg-tse-cta{padding:22px 18px}.rkg-tse-how{grid-template-columns:1fr;gap:14px}.rkg-tse-cta .rkg-tse-open{justify-self:stretch}.rkg-tse-open{width:100%;gap:12px;padding:8px}.rkg-tse-open-ic{width:42px;height:42px}.rkg-tse-open-ic svg{width:20px;height:20px}.rkg-tse-open-txt b{font-size:15px}.rkg-tse-open-txt small{font-size:11.5px}.rkg-tse-open-arw{width:38px;height:38px;margin-left:4px;font-size:18px}.rkg-tse{padding:20px 16px}.rkg-tse-fields,.rkg-q-opts{grid-template-columns:1fr}.rkg-tse-meta{grid-template-columns:1fr 1fr}.rkg-tse-meta div:nth-child(2){border-right:0}.rkg-tse-meta div:nth-child(-n+2){border-bottom:1px solid #dfe6ef}.rkg-tse-bar{top:74px}.rkg-stats{grid-template-columns:1fr}.rkg-stats div{padding:22px;border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}.rkg-stats div:last-child{border-bottom:0}.rkg-stats strong{font-size:25px}
 .rkg-section{padding:70px 18px}.rkg-talent,.rkg-admission{padding-left:18px;padding-right:18px}
 .rkg-cta{margin:0 16px 50px;padding:38px 25px;display:block}.rkg-cta .rkg-btn{margin-top:22px}
 .rkg-two{grid-template-columns:1fr;gap:0}
@@ -275,6 +286,7 @@ html.rkg-modal-lock{overflow:hidden}
   <!-- One caption per slide, in the same order as the slides above. -->
   <div class="rkg-caption">
     <div class="rkg-cap is-active">
+      <div class="rkg-offer"><span>ADMISSION OPEN</span><span>UP TO 90% SCHOLARSHIP</span></div>
       <small>RADHA KRISHNA GURUKULAM · KANPUR</small>
       <h2>A Strong Foundation for a <span>Brighter Tomorrow</span></h2>
       <p>Academic classes for 9th to 12th with focused preparation for IIT-JEE, NEET, NDA and Foundation, all under one roof.</p>
@@ -303,7 +315,7 @@ html.rkg-modal-lock{overflow:hidden}
   </div>
 </section>
 
-<div class="rkg-strip">LEARN · PRACTISE · PERFORM · EXCEL &nbsp; ✦ &nbsp; IIT-JEE · NEET · NDA · FOUNDATION</div>
+<div class="rkg-strip">ADMISSION OPEN &nbsp; ✦ &nbsp; UP TO 90% SCHOLARSHIP &nbsp; ✦ &nbsp; IIT-JEE · NEET · NDA · FOUNDATION</div>
 
 <section class="rkg-section">
   <div class="rkg-intro">
@@ -407,9 +419,9 @@ html.rkg-modal-lock{overflow:hidden}
 <section id="rkg-campus" class="rkg-campus">
   <div class="rkg-campus-inner">
     <div>
-      <div class="rkg-label" style="color:#f19aa5">HOSTEL · MESS · CANTEEN</div>
+      <div class="rkg-label" style="color:#f19aa5">OUR FACILITIES</div>
       <h2>Everything under <span>one roof.</span></h2>
-      <p>From schooling and competitive preparation to hostel, mess and canteen facilities, Gurukulam is designed to give students a structured environment for focused learning and daily life.</p>
+      <p>From schooling and competitive preparation to library, labs, smart classes, a CBT center, playground, hostel, mess and canteen, Gurukulam is designed to give students a structured environment for focused learning and daily life.</p>
       <a class="rkg-btn" style="margin-top:25px" href="#rkg-admission">Enquire About Facilities →</a>
     </div>
     <div class="rkg-campus-box rkg-photo-box">
@@ -419,6 +431,14 @@ html.rkg-modal-lock{overflow:hidden}
       <strong>Study. Stay. Grow.</strong>
       <small>Academic learning · Competitive preparation · Residential support</small>
     </div>
+  </div>
+  <div class="rkg-facilities">
+    <article class="rkg-facility"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h4v16H4zM10 4h4v16h-4zM15.5 5.2l3.9-1 3.6 14.6-3.9 1z"/></svg><div><h3>Library</h3><p>A quiet, well-stocked library with reference books, study material and space for self-study.</p></div></article>
+    <article class="rkg-facility"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20V8l9-5 9 5v12h-2v-3H5v3zm2-5h14v-2a2 2 0 0 0-2-2h-5v4H5zm2.5-4.5a2 2 0 1 0 0-.01z"/></svg><div><h3>Hostel</h3><p>Safe, disciplined and homely residential facility, with mess and canteen on campus.</p></div></article>
+    <article class="rkg-facility"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2h6v2h-1v5.3l5.6 9.4A2 2 0 0 1 17.9 22H6.1a2 2 0 0 1-1.7-3.3L10 9.3V4H9zm-.9 13h7.8l-2.4-4h-3z"/></svg><div><h3>Labs</h3><p>Physics, Chemistry and Biology labs for hands-on practicals and experiments.</p></div></article>
+    <article class="rkg-facility"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18v12H3zm2 2v8h14V6zM8 18h8v2H8zm1.5-7.5 1.5 1.5 3.5-3.5 1 1-4.5 4.5L8.5 11.5z"/></svg><div><h3>CBT Center</h3><p>Computer-based test center so students practise in the real JEE / NEET exam format.</p></div></article>
+    <article class="rkg-facility"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 3.1 2.6 1.9-1 3.1h-3.2l-1-3.1zM6.2 7.6l2.3.3 1 3.1-1.9 2.6-2.3-.9a7.9 7.9 0 0 1 .9-5.1zm11.6 0a7.9 7.9 0 0 1 .9 5.1l-2.3.9-1.9-2.6 1-3.1zM10 15h4l1.4 2.4-.7 2.2a8 8 0 0 1-5.4 0l-.7-2.2z"/></svg><div><h3>Playground</h3><p>Open playground for sports, fitness and outdoor activities alongside studies.</p></div></article>
+    <article class="rkg-facility"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h20v13H13v2h4v2H7v-2h4v-2H2zm2 2v9h16V5zm6 1.5 5 3-5 3z"/></svg><div><h3>Smart Class</h3><p>Digital smart classrooms that make concepts visual, interactive and easy to understand.</p></div></article>
   </div>
 </section>
 
@@ -446,7 +466,7 @@ html.rkg-modal-lock{overflow:hidden}
 
 <section class="rkg-cta">
   <div>
-    <div class="rkg-label" style="color:#ffd0d6">ADMISSIONS OPEN</div>
+    <div class="rkg-label" style="color:#ffd0d6">ADMISSIONS OPEN · UP TO 90% SCHOLARSHIP</div>
     <h2>Ready to choose the right <em>pathway?</em></h2>
     <p>Talk to our admissions team about IIT-JEE, NEET, NDA, Foundation and Classes 9th to 12th.</p>
   </div>
@@ -459,6 +479,7 @@ html.rkg-modal-lock{overflow:hidden}
       <div class="rkg-label">ADMISSIONS & ENQUIRY</div>
       <h2>Start with a <span>conversation.</span></h2>
       <p style="color:#66768b;line-height:1.7">Tell us the student's class and preferred pathway. Our admissions team can help with the next steps.</p>
+      <div class="rkg-scholar"><strong>Admission Open · Up to 90% Scholarship</strong>Deserving students can get a scholarship of up to 90%. Ask our admissions team for details.</div>
       <a class="rkg-contact" href="tel:+918738885544">8738885544</a>
       <div class="rkg-numbers">7905384057 · 9151315203</div>
       <div class="rkg-email"><a href="mailto:radhakrishnagurukulam@gmail.com">radhakrishnagurukulam@gmail.com</a></div>
@@ -481,6 +502,8 @@ html.rkg-modal-lock{overflow:hidden}
   <div class="rkg-faq-item"><button type="button" onclick="this.parentElement.classList.toggle('open')">Which classes does Gurukulam focus on? <span>⌄</span></button><div class="rkg-answer">The core academic focus is Classes 9th to 12th, along with Foundation preparation and focused competitive pathways.</div></div>
   <div class="rkg-faq-item"><button type="button" onclick="this.parentElement.classList.toggle('open')">Which competitive pathways are available? <span>⌄</span></button><div class="rkg-answer">The core pathways are IIT-JEE, NEET, NDA and Foundation.</div></div>
   <div class="rkg-faq-item"><button type="button" onclick="this.parentElement.classList.toggle('open')">Are hostel, mess and canteen facilities available? <span>⌄</span></button><div class="rkg-answer">Yes. Hostel, mess and canteen facilities are part of the Gurukulam student-support offering.</div></div>
+  <div class="rkg-faq-item"><button type="button" onclick="this.parentElement.classList.toggle('open')">What other facilities does Gurukulam have? <span>⌄</span></button><div class="rkg-answer">Along with hostel, mess and canteen, students have a library, science labs, a CBT (computer-based test) center, a playground and smart classes.</div></div>
+  <div class="rkg-faq-item"><button type="button" onclick="this.parentElement.classList.toggle('open')">Are scholarships available? <span>⌄</span></button><div class="rkg-answer">Yes. Admissions are open and deserving students can get a scholarship of up to 90%. Contact our admissions team for details.</div></div>
   <div class="rkg-faq-item"><button type="button" onclick="this.parentElement.classList.toggle('open')">How can I contact admissions? <span>⌄</span></button><div class="rkg-answer">Call 8738885544, 7905384057 or 9151315203, or submit the enquiry form above.</div></div>
 </section>
 
