@@ -70,9 +70,9 @@ a{text-decoration:none;color:inherit}
 .rkg-tse-fields{display:grid;grid-template-columns:1fr 1fr;gap:4px 18px}
 .rkg-tse-fields .rkg-tse-wide{grid-column:1/-1}
 .rkg-tse label{display:block;font-size:11px;font-weight:800;color:#4b6079;margin:10px 0}
-.rkg-tse input[type=text],.rkg-tse input[type=tel],.rkg-tse textarea{width:100%;padding:13px;border:1px solid #ccd7e3;border-radius:8px;margin-top:6px;background:#fbfcfe;font:inherit;font-size:14px;color:#102a56}
+.rkg-tse input[type=text],.rkg-tse input[type=tel],.rkg-tse select,.rkg-tse textarea{width:100%;padding:13px;border:1px solid #ccd7e3;border-radius:8px;margin-top:6px;background:#fbfcfe;font:inherit;font-size:14px;color:#102a56}
 .rkg-tse textarea{min-height:70px;resize:vertical}
-.rkg-tse input:focus,.rkg-tse textarea:focus{outline:2px solid #c6283d;outline-offset:-1px;border-color:#c6283d}
+.rkg-tse input:focus,.rkg-tse select:focus,.rkg-tse textarea:focus{outline:2px solid #c6283d;outline-offset:-1px;border-color:#c6283d}
 .rkg-tse-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;background:#c6283d;color:#fff;padding:14px 22px;border-radius:8px;font-weight:800;font-size:14px;cursor:pointer;margin-top:18px}
 .rkg-tse-btn:disabled{opacity:.6;cursor:wait}
 .rkg-tse-bar{position:sticky;top:83px;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:12px;background:#102a56;color:#fff;border-radius:12px;padding:12px 18px;margin-bottom:22px;font-size:13px;font-weight:700}
@@ -285,7 +285,7 @@ a{text-decoration:none;color:inherit}
   </div>
 
   <div class="rkg-tse-meta">
-    <div><strong>Class 9</strong><span>Exam for</span></div>
+    <div><strong>Class 8–12</strong><span>Exam for</span></div>
     <div><strong>20</strong><span>Questions</span></div>
     <div><strong>30 min</strong><span>Time allowed</span></div>
     <div><strong>100</strong><span>Maximum marks</span></div>
@@ -304,7 +304,8 @@ a{text-decoration:none;color:inherit}
         <label>Student Name<input type="text" name="name" required maxlength="80" autocomplete="name"></label>
         <label>Father's Name<input type="text" name="father" required maxlength="80"></label>
         <label>Contact No.<input type="tel" name="phone" required pattern="[+]?[0-9 ]{10,15}" maxlength="15" inputmode="tel" autocomplete="tel" placeholder="10-digit mobile number"></label>
-        <label>School<input type="text" name="school" required maxlength="120"></label>
+        <label>Class<select name="cls" required><option value="">Select class</option><option value="8">Class 8</option><option value="9">Class 9</option><option value="10">Class 10</option><option value="11">Class 11</option><option value="12">Class 12</option></select></label>
+        <label class="rkg-tse-wide">School<input type="text" name="school" required maxlength="120"></label>
         <label class="rkg-tse-wide">Address<textarea name="address" required maxlength="250"></textarea></label>
       </div>
       <button type="button" class="rkg-tse-btn" id="rkg-tse-go">Start Test →</button>
@@ -537,7 +538,7 @@ a{text-decoration:none;color:inherit}
 
   $('rkg-tse-go').addEventListener('click',function(){
     if(!TSE_ENDPOINT){msg.textContent='The online test is not open yet. Please contact the institute.';return}
-    var fields=startBox.querySelectorAll('input,textarea');
+    var fields=startBox.querySelectorAll('input,select,textarea');
     for(var i=0;i<fields.length;i++){
       fields[i].value=fields[i].value.trim();
       if(!fields[i].checkValidity()){fields[i].reportValidity();return}
@@ -561,8 +562,7 @@ a{text-decoration:none;color:inherit}
     sending=true;submitBtn.disabled=true;submitBtn.textContent='Submitting…';
     msg.textContent=timeUp?'Time is up. Submitting your answers…':'';
     var data=new URLSearchParams();
-    ['name','father','phone','school','address'].forEach(function(n){data.append(n,form.elements[n].value.trim())});
-    data.append('cls','9');
+    ['name','father','phone','cls','school','address'].forEach(function(n){data.append(n,form.elements[n].value.trim())});
     data.append('seconds',String(Math.round((Date.now()-startedAt)/1000)));
     QUESTIONS.forEach(function(_,i){var c=form.querySelector('input[name="q'+(i+1)+'"]:checked');data.append('q'+(i+1),c?c.value:'')});
     // no-cors: Apps Script does not send CORS headers, so the reply is unreadable;
