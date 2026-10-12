@@ -49,7 +49,9 @@ a{text-decoration:none;color:inherit}
 .rkg-ghost{display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(255,255,255,.75);background:rgba(0,0,0,.25);color:#fff;padding:11px 17px;border-radius:8px;font-size:13px;font-weight:800}
 .rkg-ghost:hover{background:rgba(255,255,255,.14);border-color:#fff}
 @media(prefers-reduced-motion:reduce){.rkg-slide,.rkg-dot{transition:none}.rkg-cap.is-active{animation:none}}
-.rkg-strip{background:#c6283d;color:#fff;text-align:center;padding:14px;font-size:11px;font-weight:800;letter-spacing:1.4px}
+.rkg-strip{background:#c6283d;color:#fff;text-align:center;padding:14px;font-size:11px;font-weight:800;letter-spacing:1.4px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 16px}
+.rkg-strip i{font-style:normal}
+@media(max-width:380px){.rkg-strip i{flex-basis:100%;height:0;overflow:hidden}}
 .rkg-section{max-width:1200px;margin:auto;padding:85px 25px}
 .rkg-label{font-size:10px;letter-spacing:2px;color:#c6283d;font-weight:900}
 .rkg-section h2{font-size:clamp(38px,5vw,62px);line-height:1;letter-spacing:-2.5px;margin:12px 0 20px;color:#102a56}
@@ -215,7 +217,7 @@ html.rkg-modal-lock{overflow:hidden}
 }
 @media(max-width:560px){
 .rkg-brand{min-width:0}.rkg-brand img{width:48px;height:48px}.rkg-brand strong{font-size:16px}
-.rkg-reasons,.rkg-facilities{grid-template-columns:1fr}.rkg-modal{width:100%;max-height:100dvh;height:100dvh;border-radius:0}.rkg-modal-head{padding:12px 16px}.rkg-modal-head strong{font-size:16px}.rkg-tse-cta{padding:22px 18px}.rkg-tse-how{grid-template-columns:1fr;gap:14px}.rkg-tse-cta .rkg-tse-open{justify-self:stretch}.rkg-tse-open{width:100%;gap:12px;padding:8px}.rkg-tse-open-ic{width:42px;height:42px}.rkg-tse-open-ic svg{width:20px;height:20px}.rkg-tse-open-txt b{font-size:15px}.rkg-tse-open-txt small{font-size:11.5px}.rkg-tse-open-arw{width:38px;height:38px;margin-left:4px;font-size:18px}.rkg-tse{padding:20px 16px}.rkg-tse-fields,.rkg-q-opts{grid-template-columns:1fr}.rkg-tse-meta{grid-template-columns:1fr 1fr}.rkg-tse-meta div:nth-child(2){border-right:0}.rkg-tse-meta div:nth-child(-n+2){border-bottom:1px solid #dfe6ef}.rkg-tse-bar{top:74px}.rkg-stats{grid-template-columns:1fr}.rkg-stats div{padding:22px;border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}.rkg-stats div:last-child{border-bottom:0}.rkg-stats strong{font-size:25px}
+.rkg-strip-br{flex-basis:100%;height:0;overflow:hidden}.rkg-reasons,.rkg-facilities{grid-template-columns:1fr}.rkg-modal{width:100%;max-height:100dvh;height:100dvh;border-radius:0}.rkg-modal-head{padding:12px 16px}.rkg-modal-head strong{font-size:16px}.rkg-tse-cta{padding:22px 18px}.rkg-tse-how{grid-template-columns:1fr;gap:14px}.rkg-tse-cta .rkg-tse-open{justify-self:stretch}.rkg-tse-open{width:100%;gap:12px;padding:8px}.rkg-tse-open-ic{width:42px;height:42px}.rkg-tse-open-ic svg{width:20px;height:20px}.rkg-tse-open-txt b{font-size:15px}.rkg-tse-open-txt small{font-size:11.5px}.rkg-tse-open-arw{width:38px;height:38px;margin-left:4px;font-size:18px}.rkg-tse{padding:20px 16px}.rkg-tse-fields,.rkg-q-opts{grid-template-columns:1fr}.rkg-tse-meta{grid-template-columns:1fr 1fr}.rkg-tse-meta div:nth-child(2){border-right:0}.rkg-tse-meta div:nth-child(-n+2){border-bottom:1px solid #dfe6ef}.rkg-tse-bar{top:74px}.rkg-stats{grid-template-columns:1fr}.rkg-stats div{padding:22px;border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}.rkg-stats div:last-child{border-bottom:0}.rkg-stats strong{font-size:25px}
 .rkg-section{padding:70px 18px}.rkg-talent,.rkg-admission{padding-left:18px;padding-right:18px}
 .rkg-cta{margin:0 16px 50px;padding:38px 25px;display:block}.rkg-cta .rkg-btn{margin-top:22px}
 .rkg-two{grid-template-columns:1fr;gap:0}
@@ -315,7 +317,7 @@ html.rkg-modal-lock{overflow:hidden}
   </div>
 </section>
 
-<div class="rkg-strip">ADMISSION OPEN &nbsp; ✦ &nbsp; UP TO 90% SCHOLARSHIP &nbsp; ✦ &nbsp; DROPPER BATCH &nbsp; ✦ &nbsp; IIT-JEE · NEET · NDA · FOUNDATION</div>
+<div class="rkg-strip"><span>ADMISSION OPEN</span><i aria-hidden="true">✦</i><span>UP TO 90% SCHOLARSHIP</span><i class="rkg-strip-br" aria-hidden="true">✦</i><span>DROPPER BATCH</span><i class="rkg-strip-br" aria-hidden="true">✦</i><span>IIT-JEE · NEET · NDA · FOUNDATION</span></div>
 
 <section class="rkg-section">
   <div class="rkg-intro">
