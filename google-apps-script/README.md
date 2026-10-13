@@ -23,7 +23,7 @@ https://docs.google.com/spreadsheets/d/1Xz1QzIMHtFbSURzjAOaPinkEG4ezzKN3C-xXVZGM
    `var TSE_ENDPOINT='';` and publish the site.
 
 Until step 6 is done, the website sends each finished test to the institute
-on WhatsApp (8738885544) instead.
+on WhatsApp (8573000541) instead.
 
 ## Changing the questions or answer key
 
