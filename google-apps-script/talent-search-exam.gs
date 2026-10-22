@@ -1,60 +1,37 @@
 /**
- * Radha Krishna Gurukulam - Talent Search Exam
+ * Radha Krishna Gurukulam - Talent Search Exam registrations
  *
- * Receives each online exam submission from the website, scores it and adds
- * one row to the first tab of the Google Sheet this script is attached to.
- *
- * The answer key lives only here, never on the website, so students cannot
- * find the answers by viewing the page source.
+ * Receives each registration from the website's Talent Search Exam form and
+ * adds one row to the "Registrations" tab of the Google Sheet this script is
+ * attached to (the tab is created on the first registration).
  *
  * Setup: see google-apps-script/README.md.
  */
 
-// Correct option for Q1..Q20, in order. Edit here if the paper changes.
-var ANSWER_KEY = [
-  'B', 'A', 'C', 'B', 'B', 'C', 'D', 'C', 'B', 'C',
-  'B', 'A', 'A', 'D', 'D', 'B', 'C', 'C', 'A', 'B'
-];
-var MARKS_PER_QUESTION = 5;
-
+var SHEET_NAME = 'Registrations';
 var HEADERS = [
-  'Submitted At', 'Student Name', "Father's Name", 'Contact No', 'School',
-  'Address', 'Class', 'Score (out of 100)', 'Correct', 'Wrong', 'Unanswered',
-  'Time Taken'
-].concat(ANSWER_KEY.map(function (_, i) { return 'Q' + (i + 1); }));
+  'Submitted At', 'Student Name', "Father's Name", 'Contact No', 'Class',
+  'School', 'Address'
+];
 
 function doPost(e) {
   var lock = LockService.getScriptLock();
   lock.waitLock(20000);
   try {
     var p = (e && e.parameter) || {};
-    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+    var book = SpreadsheetApp.getActiveSpreadsheet();
+    var sheet = book.getSheetByName(SHEET_NAME) || book.insertSheet(SHEET_NAME);
     if (sheet.getLastRow() === 0) sheet.appendRow(HEADERS);
-
-    var correct = 0, wrong = 0, unanswered = 0;
-    var answers = ANSWER_KEY.map(function (key, i) {
-      var a = String(p['q' + (i + 1)] || '').trim().toUpperCase();
-      if (!/^[ABCD]$/.test(a)) a = '';
-      if (!a) unanswered++;
-      else if (a === key) correct++;
-      else wrong++;
-      return a;
-    });
 
     sheet.appendRow([
       new Date(),
       clean(p.name),
       clean(p.father),
       "'" + clean(p.phone).replace(/^'/, ''), // keep as text so leading 0 / + survive
-      clean(p.school),
-      clean(p.address),
       clean(p.cls),
-      correct * MARKS_PER_QUESTION,
-      correct,
-      wrong,
-      unanswered,
-      formatSeconds(p.seconds)
-    ].concat(answers));
+      clean(p.school),
+      clean(p.address)
+    ]);
 
     return json({ ok: true });
   } catch (err) {
@@ -66,7 +43,7 @@ function doPost(e) {
 
 // Visiting the web app URL in a browser shows this, which confirms the deploy.
 function doGet() {
-  return ContentService.createTextOutput('Talent Search Exam endpoint is running.');
+  return ContentService.createTextOutput('Talent Search Exam registration endpoint is running.');
 }
 
 // Trims, limits length, and stops text that starts with = + - @ being
@@ -74,12 +51,6 @@ function doGet() {
 function clean(v) {
   v = String(v == null ? '' : v).trim().slice(0, 300);
   return /^[=+\-@]/.test(v) ? "'" + v : v;
-}
-
-function formatSeconds(v) {
-  var s = Math.max(0, Math.min(36000, parseInt(v, 10) || 0));
-  var m = Math.floor(s / 60), r = s % 60;
-  return m + ' min ' + (r < 10 ? '0' : '') + r + ' sec';
 }
 
 function json(obj) {
