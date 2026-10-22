@@ -275,6 +275,21 @@ html.rkg-modal-lock{overflow:hidden}
 .rkg-stats div{padding:33px;text-align:center;border-right:1px solid rgba(255,255,255,.12)}
 .rkg-stats strong{display:block;font-size:32px}
 .rkg-stats span{font-size:10px;color:#aec2d9;text-transform:uppercase;letter-spacing:1px}
+.rkg-burger{display:none;flex:none;width:44px;height:44px;border:1px solid #dfe6ef;border-radius:10px;background:#fff;color:#102a56;cursor:pointer;align-items:center;justify-content:center}
+.rkg-burger svg{width:22px;height:22px;fill:currentColor}
+.rkg-burger .rkg-x,.rkg-burger[aria-expanded="true"] .rkg-bars{display:none}
+.rkg-burger[aria-expanded="true"] .rkg-x{display:block}
+.rkg-mnav{position:absolute;top:100%;left:0;right:0;max-height:calc(100dvh - 80px);overflow-y:auto;background:#fff;border-bottom:1px solid #e2e8f0;box-shadow:0 18px 30px rgba(16,42,86,.14);padding:8px 18px 20px}
+.rkg-mnav[hidden]{display:none}
+.rkg-mnav>a,.rkg-mnav summary{display:flex;justify-content:space-between;align-items:center;padding:14px 4px;border-bottom:1px solid #edf1f6;font-size:15px;font-weight:700;color:#102a56;cursor:pointer;list-style:none}
+.rkg-mnav summary::-webkit-details-marker{display:none}
+.rkg-mnav summary:after{content:"▾";color:#c6283d;transition:transform .2s}
+.rkg-mnav details[open] summary:after{transform:rotate(180deg)}
+.rkg-mnav details div{padding:4px 0 8px 12px;border-bottom:1px solid #edf1f6}
+.rkg-mnav details a{display:block;padding:9px 4px;font-size:14px;font-weight:700;color:#33465f}
+.rkg-mnav details a small{display:block;font-size:12px;font-weight:500;color:#7a8799}
+.rkg-mnav .rkg-btn{display:flex;margin-top:16px;padding:14px}
+.rkg-mnav .rkg-mnav-call{display:block;margin-top:12px;text-align:center;font-size:13px;color:#53657b}
 .rkg-dd{position:relative}
 .rkg-dd-menu{display:none;position:absolute;top:100%;left:-14px;z-index:1001;min-width:270px;padding:8px;margin-top:10px;background:#fff;border:1px solid #dfe6ef;border-radius:12px;box-shadow:0 18px 40px rgba(16,42,86,.16)}
 .rkg-dd-menu:before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
@@ -379,7 +394,7 @@ html.rkg-modal-lock{overflow:hidden}
 .rkg-credit a{text-decoration:underline}
 @media(max-width:900px){
 .rkg-top{justify-content:center}.rkg-top span:last-child{display:none}
-.rkg-links{display:none}.rkg-nav{padding:12px 18px}
+.rkg-links{display:none}.rkg-nav{padding:12px 18px;gap:10px}.rkg-nav>.rkg-btn{margin-left:auto;white-space:nowrap}.rkg-burger{display:inline-flex}
 .rkg-caption{width:38%;bottom:14%}
 .rkg-talent{padding-left:25px;padding-right:25px}.rkg-talent-head{grid-template-columns:1fr;gap:0}.rkg-tse-qs{grid-template-columns:1fr}
 .rkg-reasons{grid-template-columns:1fr 1fr}
@@ -405,6 +420,7 @@ html.rkg-modal-lock{overflow:hidden}
 .rkg-cta{margin:0 16px 50px;padding:38px 25px;display:block}.rkg-cta .rkg-btn{margin-top:22px}
 .rkg-two{grid-template-columns:1fr;gap:0}
 }
+@media(max-width:400px){.rkg-nav>.rkg-btn{display:none}.rkg-burger{margin-left:auto}}
 </style>
 </head>
 <body>
@@ -446,6 +462,28 @@ html.rkg-modal-lock{overflow:hidden}
     <a href="#rkg-campus">Facilities</a>
   </div>
   <a class="rkg-btn" href="#rkg-admission">Enquire →</a>
+  <button type="button" class="rkg-burger" id="rkg-burger" aria-label="Open menu" aria-expanded="false" aria-controls="rkg-mnav">
+    <svg class="rkg-bars" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    <svg class="rkg-x" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.3 5.7 16.9 4.3 12 9.2 7.1 4.3 5.7 5.7 10.6 10.6 5.7 15.5l1.4 1.4 4.9-4.9 4.9 4.9 1.4-1.4-4.9-4.9z"/></svg>
+  </button>
+  <div class="rkg-mnav" id="rkg-mnav" hidden>
+    <a href="#rkg-home">Home</a>
+    <details>
+      <summary>Classroom Courses</summary>
+      <div>
+        <a href="#rkg-courses">All Courses</a>
+        <a href="#rkg-course-9">Class 9th<small>One Year Foundation Program</small></a>
+        <a href="#rkg-course-10">Class 10th<small>One Year Foundation Program</small></a>
+        <a href="#rkg-course-11">Class 11th<small>Two Year Program (11th + 12th)</small></a>
+        <a href="#rkg-course-12">Class 12th<small>One Year Program</small></a>
+        <a href="#rkg-course-dropper">Dropper (12th Pass)<small>One Year Program</small></a>
+      </div>
+    </details>
+    <a href="#rkg-talent">Talent Search Exam</a>
+    <a href="#rkg-campus">Facilities</a>
+    <a class="rkg-btn" href="#rkg-admission">Enquire Now →</a>
+    <a class="rkg-mnav-call" href="tel:+918573000541">Call 8573000541</a>
+  </div>
 </nav>
 
 <section id="rkg-home" class="rkg-hero" aria-roledescription="carousel" aria-label="Highlights">
@@ -953,6 +991,17 @@ html.rkg-modal-lock{overflow:hidden}
 </script>
 <script>
 document.querySelectorAll('[data-course-class]').forEach(function(a){a.addEventListener('click',function(){var s=document.getElementById('rkg-class');if(s)s.value=a.getAttribute('data-course-class')})});
+</script>
+<script>
+(function(){
+  var btn=document.getElementById('rkg-burger'),menu=document.getElementById('rkg-mnav');
+  function set(open){menu.hidden=!open;btn.setAttribute('aria-expanded',open);btn.setAttribute('aria-label',open?'Close menu':'Open menu')}
+  btn.addEventListener('click',function(){set(menu.hidden)});
+  menu.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!menu.hidden){set(false);btn.focus()}});
+  document.addEventListener('click',function(e){if(!menu.hidden&&!e.target.closest('.rkg-nav'))set(false)});
+  window.addEventListener('resize',function(){if(window.innerWidth>900)set(false)});
+})();
 </script>
 </body>
 </html>
