@@ -275,6 +275,38 @@ html.rkg-modal-lock{overflow:hidden}
 .rkg-stats div{padding:33px;text-align:center;border-right:1px solid rgba(255,255,255,.12)}
 .rkg-stats strong{display:block;font-size:32px}
 .rkg-stats span{font-size:10px;color:#aec2d9;text-transform:uppercase;letter-spacing:1px}
+.rkg-dd{position:relative}
+.rkg-dd-menu{display:none;position:absolute;top:100%;left:-14px;z-index:1001;min-width:270px;padding:8px;margin-top:10px;background:#fff;border:1px solid #dfe6ef;border-radius:12px;box-shadow:0 18px 40px rgba(16,42,86,.16)}
+.rkg-dd-menu:before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
+.rkg-dd:hover .rkg-dd-menu,.rkg-dd:focus-within .rkg-dd-menu{display:block}
+.rkg-dd-menu a{display:block;padding:9px 12px;border-radius:8px;color:#102a56;font-size:13px}
+.rkg-dd-menu a small{display:block;font-size:11px;font-weight:600;color:#7a8799}
+.rkg-dd-menu a:hover{background:#f3f6fb;color:#c6283d}
+#rkg-courses{scroll-margin-top:90px}
+.rkg-courses-lead{max-width:720px;color:#66768b;font-size:15px;line-height:1.7}
+.rkg-courses{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.rkg-course{display:flex;flex-direction:column;gap:12px;background:#fff;border:1px solid #dfe6ef;border-radius:16px;padding:26px;scroll-margin-top:110px}
+.rkg-course:target{border-color:#c6283d;box-shadow:0 0 0 3px rgba(198,40,61,.15)}
+.rkg-course-tag{align-self:flex-start;background:#102a56;color:#fff;border-radius:999px;padding:5px 12px;font-size:11px;font-weight:800;letter-spacing:1px}
+.rkg-course-drop .rkg-course-tag{background:#c6283d}
+.rkg-course h3{font-size:21px;line-height:1.2}
+.rkg-course-meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;font-weight:700;color:#c6283d}
+.rkg-course p{font-size:13px;color:#66768b;line-height:1.6}
+.rkg-course ul{list-style:none;display:grid;gap:6px;font-size:13px;color:#33465f}
+.rkg-course li:before{content:"✓";color:#1f7a45;font-weight:900;margin-right:8px}
+.rkg-course-exams{border-top:1px dashed #dfe6ef;padding-top:12px;margin-top:auto}
+.rkg-course-exams b{display:block;font-size:10px;letter-spacing:1.5px;color:#7a8799;margin-bottom:7px}
+.rkg-chips{display:flex;flex-wrap:wrap;gap:6px}
+.rkg-chips span{background:#eef3fa;color:#102a56;border-radius:6px;padding:5px 9px;font-size:11px;font-weight:800}
+.rkg-course .rkg-btn{align-self:flex-start;padding:10px 15px;font-size:12px}
+.rkg-exams{margin-top:56px;background:#102a56;color:#fff;border-radius:20px;padding:34px}
+.rkg-exams h3{font-size:26px;margin:8px 0 20px}
+.rkg-exam-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.rkg-exam{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:18px}
+.rkg-exam strong{display:block;font-size:17px;margin-bottom:4px}
+.rkg-exam small{display:block;font-size:11px;font-weight:800;letter-spacing:1px;color:#ffb3bd;margin-bottom:8px}
+.rkg-exam p{font-size:12px;line-height:1.6;color:#d3deec}
+.rkg-exams-note{margin-top:16px;font-size:11px;color:#aec2d9}
 .rkg-reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:40px}
 .rkg-reason{background:#fff;border:1px solid #dfe6ef;border-radius:15px;padding:25px}
 .rkg-reason h3{font-size:18px;margin-bottom:8px}
@@ -351,6 +383,7 @@ html.rkg-modal-lock{overflow:hidden}
 .rkg-caption{width:38%;bottom:14%}
 .rkg-talent{padding-left:25px;padding-right:25px}.rkg-talent-head{grid-template-columns:1fr;gap:0}.rkg-tse-qs{grid-template-columns:1fr}
 .rkg-reasons{grid-template-columns:1fr 1fr}
+.rkg-courses,.rkg-exam-grid{grid-template-columns:1fr 1fr}
 .rkg-facilities{grid-template-columns:1fr 1fr}
 .rkg-campus-inner,.rkg-method,.rkg-admission-grid{grid-template-columns:1fr;gap:40px}.rkg-intro{grid-template-columns:1fr;gap:10px}
 .rkg-footer-top,.rkg-footer-bottom{display:grid}
@@ -367,8 +400,8 @@ html.rkg-modal-lock{overflow:hidden}
 }
 @media(max-width:560px){
 .rkg-brand{min-width:0}.rkg-brand img{width:48px;height:48px}.rkg-brand strong{font-size:16px}
-.rkg-strip-br{flex-basis:100%;height:0;overflow:hidden}.rkg-reasons,.rkg-facilities{grid-template-columns:1fr}.rkg-modal{width:100%;max-height:100dvh;height:100dvh;border-radius:0}.rkg-modal-head{padding:12px 16px}.rkg-modal-head strong{font-size:16px}.rkg-tse-cta{padding:22px 18px}.rkg-tse-how{grid-template-columns:1fr;gap:14px}.rkg-tse-cta .rkg-tse-open{justify-self:stretch}.rkg-tse-open{width:100%;gap:12px;padding:8px}.rkg-tse-open-ic{width:42px;height:42px}.rkg-tse-open-ic svg{width:20px;height:20px}.rkg-tse-open-txt b{font-size:15px}.rkg-tse-open-txt small{font-size:11.5px}.rkg-tse-open-arw{width:38px;height:38px;margin-left:4px;font-size:18px}.rkg-tse{padding:20px 16px}.rkg-tse-fields,.rkg-q-opts{grid-template-columns:1fr}.rkg-tse-meta{grid-template-columns:1fr 1fr}.rkg-tse-meta div:nth-child(2){border-right:0}.rkg-tse-meta div:nth-child(-n+2){border-bottom:1px solid #dfe6ef}.rkg-tse-bar{top:74px}.rkg-stats{grid-template-columns:1fr}.rkg-stats div{padding:22px;border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}.rkg-stats div:last-child{border-bottom:0}.rkg-stats strong{font-size:25px}
-.rkg-section{padding:70px 18px}.rkg-talent,.rkg-admission{padding-left:18px;padding-right:18px}
+.rkg-strip-br{flex-basis:100%;height:0;overflow:hidden}.rkg-reasons,.rkg-facilities,.rkg-courses,.rkg-exam-grid{grid-template-columns:1fr}.rkg-modal{width:100%;max-height:100dvh;height:100dvh;border-radius:0}.rkg-modal-head{padding:12px 16px}.rkg-modal-head strong{font-size:16px}.rkg-tse-cta{padding:22px 18px}.rkg-tse-how{grid-template-columns:1fr;gap:14px}.rkg-tse-cta .rkg-tse-open{justify-self:stretch}.rkg-tse-open{width:100%;gap:12px;padding:8px}.rkg-tse-open-ic{width:42px;height:42px}.rkg-tse-open-ic svg{width:20px;height:20px}.rkg-tse-open-txt b{font-size:15px}.rkg-tse-open-txt small{font-size:11.5px}.rkg-tse-open-arw{width:38px;height:38px;margin-left:4px;font-size:18px}.rkg-tse{padding:20px 16px}.rkg-tse-fields,.rkg-q-opts{grid-template-columns:1fr}.rkg-tse-meta{grid-template-columns:1fr 1fr}.rkg-tse-meta div:nth-child(2){border-right:0}.rkg-tse-meta div:nth-child(-n+2){border-bottom:1px solid #dfe6ef}.rkg-tse-bar{top:74px}.rkg-stats{grid-template-columns:1fr}.rkg-stats div{padding:22px;border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}.rkg-stats div:last-child{border-bottom:0}.rkg-stats strong{font-size:25px}
+.rkg-section{padding:70px 18px}.rkg-exams{padding:24px 18px}.rkg-talent,.rkg-admission{padding-left:18px;padding-right:18px}
 .rkg-cta{margin:0 16px 50px;padding:38px 25px;display:block}.rkg-cta .rkg-btn{margin-top:22px}
 .rkg-two{grid-template-columns:1fr;gap:0}
 }
@@ -399,7 +432,16 @@ html.rkg-modal-lock{overflow:hidden}
   </a>
   <div class="rkg-links">
     <a href="#rkg-home">Home</a>
-    <a href="#rkg-why">Classroom Courses</a>
+    <div class="rkg-dd">
+      <a href="#rkg-courses">Classroom Courses ▾</a>
+      <div class="rkg-dd-menu">
+        <a href="#rkg-course-9">Class 9th<small>One Year Foundation Program</small></a>
+        <a href="#rkg-course-10">Class 10th<small>One Year Foundation Program</small></a>
+        <a href="#rkg-course-11">Class 11th<small>Two Year Program (11th + 12th)</small></a>
+        <a href="#rkg-course-12">Class 12th<small>One Year Program</small></a>
+        <a href="#rkg-course-dropper">Dropper (12th Pass)<small>One Year Program</small></a>
+      </div>
+    </div>
     <a href="#rkg-talent">Talent Search Exam</a>
     <a href="#rkg-campus">Facilities</a>
   </div>
@@ -482,6 +524,65 @@ html.rkg-modal-lock{overflow:hidden}
       <img class="rkg-intro-img" src="https://images.unsplash.com/photo-1709290749293-c6152a187b14?auto=format&fit=crop&w=1000&q=70" alt="Indian students in school uniform studying in a classroom with their teacher" loading="lazy" onerror="this.remove()">
       <p>Students receive academic schooling for Classes 9th to 12th while building the concepts, discipline and exam skills required for their chosen competitive pathway. Students who have taken a drop year can also join and prepare for IIT-JEE, NEET and NDA.</p>
     </div>
+  </div>
+</section>
+
+<section id="rkg-courses" class="rkg-section">
+  <div class="rkg-label">CLASSROOM COURSES</div>
+  <h2>Choose your <span>course.</span></h2>
+  <p class="rkg-courses-lead">Classroom programs for Classes 9th to 12th and dropper students, with schooling, competitive preparation and regular tests under one roof.</p>
+  <div class="rkg-courses">
+    <article class="rkg-course" id="rkg-course-9">
+      <span class="rkg-course-tag">CLASS 9TH</span>
+      <h3>One Year Foundation Program</h3>
+      <div class="rkg-course-meta"><span>⏱ 1 year</span><span>For students in Class 9</span></div>
+      <p>Builds strong basics in Maths and Science alongside school studies, so students are ready for competitive preparation early.</p>
+      <ul><li>School syllabus with concept-first teaching</li><li>Maths, Physics, Chemistry and Biology foundation</li><li>Mental ability and logical reasoning</li><li>Weekly tests and doubt sessions</li></ul>
+      <div class="rkg-course-exams"><b>EXAMS COVERED</b><div class="rkg-chips"><span>School Exams</span><span>Olympiads</span><span>JEE / NEET / NDA Foundation</span></div></div>
+      <a class="rkg-btn" href="#rkg-admission" data-course-class="Class 9">Enquire for this course →</a>
+    </article>
+    <article class="rkg-course" id="rkg-course-10">
+      <span class="rkg-course-tag">CLASS 10TH</span>
+      <h3>One Year Foundation Program</h3>
+      <div class="rkg-course-meta"><span>⏱ 1 year</span><span>For students in Class 10</span></div>
+      <p>Focused board preparation together with a strong base for IIT-JEE, NEET and NDA in Class 11 and 12.</p>
+      <ul><li>Complete Class 10 board syllabus</li><li>Foundation for JEE, NEET and NDA topics</li><li>Board-pattern tests and sample papers</li><li>Stream guidance for Class 11</li></ul>
+      <div class="rkg-course-exams"><b>EXAMS COVERED</b><div class="rkg-chips"><span>Class 10 Board</span><span>Olympiads</span><span>JEE / NEET / NDA Foundation</span></div></div>
+      <a class="rkg-btn" href="#rkg-admission" data-course-class="Class 10">Enquire for this course →</a>
+    </article>
+    <article class="rkg-course" id="rkg-course-11">
+      <span class="rkg-course-tag">CLASS 11TH</span>
+      <h3>Two Year Program (11th + 12th)</h3>
+      <div class="rkg-course-meta"><span>⏱ 2 years</span><span>For students entering Class 11</span></div>
+      <p>The complete two-year course for Classes 11 and 12, covering the board syllabus and full competitive preparation.</p>
+      <ul><li>Class 11 and 12 board syllabus</li><li>Full JEE / NEET syllabus with NDA option</li><li>CBT practice in the real exam format</li><li>Regular test series with performance analysis</li></ul>
+      <div class="rkg-course-exams"><b>EXAMS COVERED</b><div class="rkg-chips"><span>Class 12 Board</span><span>JEE Main</span><span>JEE Advanced</span><span>NEET-UG</span><span>NDA</span></div></div>
+      <a class="rkg-btn" href="#rkg-admission" data-course-class="Class 11">Enquire for this course →</a>
+    </article>
+    <article class="rkg-course" id="rkg-course-12">
+      <span class="rkg-course-tag">CLASS 12TH</span>
+      <h3>One Year Program</h3>
+      <div class="rkg-course-meta"><span>⏱ 1 year</span><span>For students in Class 12</span></div>
+      <p>An intensive year that balances the Class 12 board with revision and practice for the entrance exams.</p>
+      <ul><li>Class 12 board preparation</li><li>Class 11 + 12 revision for entrance exams</li><li>Full-length mock tests on CBT</li><li>Personal mentoring and doubt sessions</li></ul>
+      <div class="rkg-course-exams"><b>EXAMS COVERED</b><div class="rkg-chips"><span>Class 12 Board</span><span>JEE Main</span><span>JEE Advanced</span><span>NEET-UG</span><span>NDA</span></div></div>
+      <a class="rkg-btn" href="#rkg-admission" data-course-class="Class 12">Enquire for this course →</a>
+    </article>
+    <article class="rkg-course rkg-course-drop" id="rkg-course-dropper">
+      <span class="rkg-course-tag">DROPPER · 12TH PASS</span>
+      <h3>One Year Program</h3>
+      <div class="rkg-course-meta"><span>⏱ 1 year</span><span>For 12th pass students</span></div>
+      <p>For students who have taken a drop year and want to improve their rank with full-time, focused preparation.</p>
+      <ul><li>Complete syllabus revision from basics</li><li>Daily practice and weekly full tests</li><li>All-India level mock tests on CBT</li><li>Hostel and disciplined study routine</li></ul>
+      <div class="rkg-course-exams"><b>EXAMS COVERED</b><div class="rkg-chips"><span>JEE Main</span><span>JEE Advanced</span><span>NEET-UG</span><span>NDA</span></div></div>
+      <a class="rkg-btn" href="#rkg-admission" data-course-class="12th Pass / Drop Year">Enquire for this course →</a>
+    </article>
+  </div>
+  <div class="rkg-exams">
+    <div class="rkg-label" style="color:#ffb3bd">EXAMS WE PREPARE FOR</div>
+    <h3>Know your target exam</h3>
+    <div class="rkg-exam-grid"><div class="rkg-exam"><strong>JEE Main</strong><small>By NTA · Twice a year</small><p>Computer-based exam for NITs, IIITs and other colleges, and the qualifying step for JEE Advanced.</p></div><div class="rkg-exam"><strong>JEE Advanced</strong><small>By the IITs · Once a year</small><p>For admission to the IITs. Students who qualify through JEE Main can appear.</p></div><div class="rkg-exam"><strong>NEET-UG</strong><small>By NTA · Once a year</small><p>The national entrance exam for MBBS, BDS and other medical courses.</p></div><div class="rkg-exam"><strong>NDA</strong><small>By UPSC · Twice a year</small><p>For entry into the Army, Navy and Air Force wings of the National Defence Academy after Class 12.</p></div></div>
+    <p class="rkg-exams-note">Along with Class 10 and 12 board exams and Olympiads. Exam dates are announced by the conducting bodies every year; our team will guide you through the forms and the schedule.</p>
   </div>
 </section>
 
@@ -849,6 +950,9 @@ html.rkg-modal-lock{overflow:hidden}
     });
   }
 })();
+</script>
+<script>
+document.querySelectorAll('[data-course-class]').forEach(function(a){a.addEventListener('click',function(){var s=document.getElementById('rkg-class');if(s)s.value=a.getAttribute('data-course-class')})});
 </script>
 </body>
 </html>
