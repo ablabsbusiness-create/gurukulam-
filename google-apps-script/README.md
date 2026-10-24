@@ -1,6 +1,6 @@
 # Talent Search Exam registrations → Google Sheet
 
-The Talent Search Exam form on the website only collects the student's
+The Scholarship Test (Talent Search Exam) form on `scholarship-test.html` only collects the student's
 contact details (no test is taken online). Each registration is sent to a
 Google Apps Script, which adds a row to the "Registrations" tab of the
 response sheet.
@@ -21,7 +21,7 @@ https://docs.google.com/spreadsheets/d/1Xz1QzIMHtFbSURzjAOaPinkEG4ezzKN3C-xXVZGM
    account that owns the sheet. (Google may warn that the app is unverified:
    click **Advanced → Go to … (unsafe)**. It is your own script.)
 5. Copy the **Web app URL** (it ends in `/exec`).
-6. In `index.html`, paste it between the quotes of
+6. In `scholarship-test.html`, paste it between the quotes of
    `var TSE_ENDPOINT='';` and publish the site.
 
 Until step 6 is done, the website sends each registration to the institute
