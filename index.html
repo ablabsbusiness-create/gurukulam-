@@ -195,7 +195,7 @@ a{text-decoration:none;color:inherit}
 .rkg-strip i{font-style:normal}
 @media(max-width:380px){.rkg-strip i{flex-basis:100%;height:0;overflow:hidden}}
 .rkg-section{max-width:1200px;margin:auto;padding:85px 25px}
-.rkg-label{font-size:10px;letter-spacing:2px;color:#c6283d;font-weight:900}
+.rkg-label{font-size:11px;letter-spacing:2px;color:#c6283d;font-weight:900}
 .rkg-section h2{font-size:clamp(38px,5vw,62px);line-height:1;letter-spacing:-2.5px;margin:12px 0 20px;color:#102a56}
 .rkg-section h2 span{color:#c6283d}
 .rkg-intro{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:end}
@@ -260,7 +260,7 @@ html.rkg-modal-lock{overflow:hidden}
 .rkg-stats{display:grid;grid-template-columns:repeat(3,1fr);background:#102a56;color:#fff}
 .rkg-stats div{padding:33px;text-align:center;border-right:1px solid rgba(255,255,255,.12)}
 .rkg-stats strong{display:block;font-size:32px}
-.rkg-stats span{font-size:10px;color:#aec2d9;text-transform:uppercase;letter-spacing:1px}
+.rkg-stats span{font-size:11px;color:#aec2d9;text-transform:uppercase;letter-spacing:1px}
 .rkg-burger{display:none;flex:none;width:44px;height:44px;border:1px solid #dfe6ef;border-radius:10px;background:#fff;color:#102a56;cursor:pointer;align-items:center;justify-content:center}
 .rkg-burger svg{width:22px;height:22px;fill:currentColor}
 .rkg-burger .rkg-x,.rkg-burger[aria-expanded="true"] .rkg-bars{display:none}
@@ -290,13 +290,20 @@ html.rkg-modal-lock{overflow:hidden}
 .rkg-course:target{border-color:#c6283d;box-shadow:0 0 0 3px rgba(198,40,61,.15)}
 .rkg-course-tag{align-self:flex-start;background:#102a56;color:#fff;border-radius:999px;padding:5px 12px;font-size:11px;font-weight:800;letter-spacing:1px}
 .rkg-course-drop .rkg-course-tag{background:#c6283d}
+.rkg-course-help{background:linear-gradient(160deg,#102a56,#1d4479);border-color:#102a56;color:#fff}
+.rkg-course-help .rkg-course-tag{background:#ffd34d;color:#102a56}
+.rkg-course.rkg-course-help p,.rkg-course.rkg-course-help ul{color:#dbe5f1}
+.rkg-course.rkg-course-help li:before{color:#ffd34d}
+.rkg-course-help-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px}
+.rkg-course .rkg-btn-line{background:transparent;border:1.5px solid rgba(255,255,255,.7)}
 .rkg-course h3{font-size:21px;line-height:1.2}
 .rkg-course-meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;font-weight:700;color:#c6283d}
 .rkg-course p{font-size:13px;color:#66768b;line-height:1.6}
 .rkg-course ul{list-style:none;display:grid;gap:6px;font-size:13px;color:#33465f}
-.rkg-course li:before{content:"✓";color:#1f7a45;font-weight:900;margin-right:8px}
+.rkg-course li{position:relative;padding-left:20px}
+.rkg-course li:before{content:"✓";position:absolute;left:0;color:#1f7a45;font-weight:900}
 .rkg-course-exams{border-top:1px dashed #dfe6ef;padding-top:12px;margin-top:auto}
-.rkg-course-exams b{display:block;font-size:10px;letter-spacing:1.5px;color:#7a8799;margin-bottom:7px}
+.rkg-course-exams b{display:block;font-size:11px;letter-spacing:1.5px;color:#7a8799;margin-bottom:7px}
 .rkg-chips{display:flex;flex-wrap:wrap;gap:6px}
 .rkg-chips span{background:#eef3fa;color:#102a56;border-radius:6px;padding:5px 9px;font-size:11px;font-weight:800}
 .rkg-course .rkg-btn{align-self:flex-start;padding:10px 15px;font-size:12px}
@@ -320,7 +327,7 @@ html.rkg-modal-lock{overflow:hidden}
 .rkg-campus-box{min-height:360px;border-radius:22px;padding:32px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(145deg,#183e70,#6799bb)}
 .rkg-campus-box strong{font-size:37px;line-height:1.02;margin:10px 0 12px}
 .rkg-campus-box small{color:#d7e4ef;font-size:12px;line-height:1.5}
-.rkg-campus-box small:first-of-type{font-weight:800;letter-spacing:1.6px;font-size:10px}
+.rkg-campus-box small:first-of-type{font-weight:800;letter-spacing:1.6px;font-size:11px}
 .rkg-facilities{max-width:1200px;margin:auto;padding:0 25px 85px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .rkg-facility{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:24px;display:flex;gap:16px;align-items:flex-start}
 .rkg-facility svg{flex:0 0 auto;width:44px;height:44px;padding:10px;border-radius:12px;background:#c6283d;fill:#fff}
@@ -357,9 +364,10 @@ html.rkg-modal-lock{overflow:hidden}
 .rkg-admission{background:#fff;max-width:none;padding-left:calc((100% - 1150px)/2);padding-right:calc((100% - 1150px)/2)}
 .rkg-admission-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px}
 .rkg-contact{display:inline-block;color:#c6283d;font-size:25px;font-weight:800;margin-top:25px}
-.rkg-numbers,.rkg-email{font-size:12px;color:#66768b;margin-top:8px}
-.rkg-form{border:1px solid #dfe6ef;border-radius:18px;padding:28px;box-shadow:0 18px 55px rgba(16,42,86,.08)}
-.rkg-form label{display:block;font-size:10px;font-weight:800;color:#4b6079;margin:12px 0}
+.rkg-numbers,.rkg-email{font-size:14px;color:#66768b;margin-top:8px;line-height:1.8}
+.rkg-numbers a:hover,.rkg-email a:hover,.rkg-answer a{color:#c6283d}
+.rkg-form{align-self:start;border:1px solid #dfe6ef;border-radius:18px;padding:28px;box-shadow:0 18px 55px rgba(16,42,86,.08)}
+.rkg-form label{display:block;font-size:12px;font-weight:800;color:#4b6079;margin:12px 0}
 .rkg-form input,.rkg-form select{width:100%;padding:13px;border:1px solid #ccd7e3;border-radius:8px;margin-top:6px;background:#fbfcfe}
 .rkg-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .rkg-form button{width:100%;border:0;background:#c6283d;color:#fff;padding:14px;border-radius:8px;font-weight:800;margin-top:12px;cursor:pointer}
@@ -375,8 +383,9 @@ html.rkg-modal-lock{overflow:hidden}
 .rkg-footer .rkg-brand small{color:#9db2ca}
 .rkg-footer .rkg-brand img{background:#fff;border-radius:10px;padding:4px}
 .rkg-footer p{color:#aec2d9;font-size:12px;max-width:500px}
-.rkg-footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:20px;color:#91a8c1;font-size:10px}
-.rkg-footer .rkg-credit{max-width:none;margin-top:14px;color:#6f88a6;font-size:9px}
+.rkg-footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:20px;color:#91a8c1;font-size:12px}
+.rkg-footer-bottom a:hover{color:#fff}
+.rkg-footer .rkg-credit{max-width:none;margin-top:14px;color:#7f96b2;font-size:11px}
 .rkg-credit a{text-decoration:underline}
 @media(max-width:900px){
 .rkg-top{justify-content:center}.rkg-top span:last-child{display:none}
@@ -404,7 +413,7 @@ html.rkg-modal-lock{overflow:hidden}
 @media(max-width:560px){
 .rkg-brand{min-width:0}.rkg-brand img{width:48px;height:48px}.rkg-brand strong{font-size:16px}
 .rkg-strip-br{flex-basis:100%;height:0;overflow:hidden}.rkg-reasons,.rkg-facilities,.rkg-courses,.rkg-exam-grid{grid-template-columns:1fr}.rkg-modal{width:100%;max-height:100dvh;height:100dvh;border-radius:0}.rkg-modal-head{padding:12px 16px}.rkg-modal-head strong{font-size:16px}.rkg-tse-cta{padding:22px 18px}.rkg-tse-how{grid-template-columns:1fr;gap:14px}.rkg-tse-cta .rkg-tse-open{justify-self:stretch}.rkg-tse-open{width:100%;gap:12px;padding:8px}.rkg-tse-open-ic{width:42px;height:42px}.rkg-tse-open-ic svg{width:20px;height:20px}.rkg-tse-open-txt b{font-size:15px}.rkg-tse-open-txt small{font-size:11.5px}.rkg-tse-open-arw{width:38px;height:38px;margin-left:4px;font-size:18px}.rkg-tse{padding:20px 16px}.rkg-tse-fields{grid-template-columns:1fr}.rkg-tse-meta{grid-template-columns:1fr 1fr}.rkg-tse-meta div:nth-child(2){border-right:0}.rkg-tse-meta div:nth-child(-n+2){border-bottom:1px solid #dfe6ef}.rkg-tse-bar{top:74px}.rkg-stats{grid-template-columns:1fr}.rkg-stats div{padding:22px;border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}.rkg-stats div:last-child{border-bottom:0}.rkg-stats strong{font-size:25px}
-.rkg-section{padding:70px 18px}.rkg-exams{padding:24px 18px}.rkg-talent,.rkg-admission{padding-left:18px;padding-right:18px}
+.rkg-section{padding:70px 18px}.rkg-campus-inner{padding:70px 18px}.rkg-facilities{padding:0 18px 70px}.rkg-exams{padding:24px 18px}.rkg-talent,.rkg-admission{padding-left:18px;padding-right:18px}
 .rkg-cta{margin:0 16px 50px;padding:38px 25px;display:block}.rkg-cta .rkg-btn{margin-top:22px}
 .rkg-two{grid-template-columns:1fr;gap:0}
 }
@@ -603,6 +612,16 @@ html.rkg-modal-lock{overflow:hidden}
       <div class="rkg-course-exams"><b>EXAMS COVERED</b><div class="rkg-chips"><span>JEE Main</span><span>JEE Advanced</span><span>NEET-UG</span><span>NDA</span></div></div>
       <a class="rkg-btn" href="#rkg-admission" data-course-class="12th Pass / Drop Year">Enquire for this course →</a>
     </article>
+    <article class="rkg-course rkg-course-help">
+      <span class="rkg-course-tag">NEED HELP?</span>
+      <h3>Not sure which course is right?</h3>
+      <p>Tell us the student's class and goal. Our admissions team will suggest the right program and explain the batches, timings and scholarship.</p>
+      <ul><li>Guidance for parents and students</li><li>Up to 90% scholarship through the Talent Search Exam</li><li>Hostel available on campus</li></ul>
+      <div class="rkg-course-help-actions">
+        <a class="rkg-btn" href="tel:+918573000541">Call 8573000541</a>
+        <a class="rkg-btn rkg-btn-line" href="#rkg-admission">Send an enquiry →</a>
+      </div>
+    </article>
   </div>
   <div class="rkg-exams">
     <div class="rkg-label" style="color:#ffb3bd">EXAMS WE PREPARE FOR</div>
@@ -758,12 +777,12 @@ html.rkg-modal-lock{overflow:hidden}
       <p style="color:#66768b;line-height:1.7">Tell us the student's class and preferred pathway. Our admissions team can help with the next steps.</p>
       <div class="rkg-scholar"><strong>Admission Open · Up to 90% Scholarship</strong>Deserving students can get a scholarship of up to 90%. Ask our admissions team for details.</div>
       <a class="rkg-contact" href="tel:+918573000541">8573000541</a>
-      <div class="rkg-numbers">9648543424 · 7905384057 · 9151315203</div>
+      <div class="rkg-numbers"><a href="tel:+919648543424">9648543424</a> · <a href="tel:+917905384057">7905384057</a> · <a href="tel:+919151315203">9151315203</a></div>
       <div class="rkg-email"><a href="mailto:radhakrishnagurukulam@gmail.com">radhakrishnagurukulam@gmail.com</a></div>
     </div>
     <form class="rkg-form" onsubmit="event.preventDefault();var n=document.getElementById('rkg-name').value,p=document.getElementById('rkg-phone').value,c=document.getElementById('rkg-class').value,x=document.getElementById('rkg-path').value;window.open('https://wa.me/918573000541?text='+encodeURIComponent('Admission enquiry - Radha Krishna Gurukulam\nStudent: '+n+'\nParent phone: '+p+'\nClass: '+c+'\nPathway: '+x),'_blank');">
-      <label>Student Name<input id="rkg-name" required placeholder="Enter student name"></label>
-      <label>Parent / Guardian Phone<input id="rkg-phone" required inputmode="numeric" placeholder="10-digit mobile number"></label>
+      <label>Student Name<input id="rkg-name" required maxlength="80" autocomplete="name" placeholder="Enter student name"></label>
+      <label>Parent / Guardian Phone<input id="rkg-phone" type="tel" required inputmode="numeric" pattern="[6-9][0-9]{9}" maxlength="10" title="Enter a 10-digit mobile number" autocomplete="tel" placeholder="10-digit mobile number"></label>
       <div class="rkg-two">
         <label>Current Class<select id="rkg-class"><option>Class 9</option><option>Class 10</option><option>Class 11</option><option>Class 12</option><option>12th Pass / Drop Year</option></select></label>
         <label>Interested In<select id="rkg-path"><option>IIT-JEE</option><option>NEET</option><option>NDA</option><option>Foundation</option></select></label>
@@ -782,7 +801,7 @@ html.rkg-modal-lock{overflow:hidden}
   <div class="rkg-faq-item"><button type="button" onclick="this.parentElement.classList.toggle('open')">What other facilities does Gurukulam have? <span>⌄</span></button><div class="rkg-answer">Along with hostel, mess and canteen, students have a library, science labs, a CBT (computer-based test) center, a playground and smart classes.</div></div>
   <div class="rkg-faq-item"><button type="button" onclick="this.parentElement.classList.toggle('open')">Are scholarships available? <span>⌄</span></button><div class="rkg-answer">Yes. Admissions are open and deserving students can get a scholarship of up to 90%. Contact our admissions team for details.</div></div>
   <div class="rkg-faq-item"><button type="button" onclick="this.parentElement.classList.toggle('open')">Can students who have taken a drop year join? <span>⌄</span></button><div class="rkg-answer">Yes. Students who have finished Class 12 and taken a drop year can join Gurukulam to prepare for IIT-JEE, NEET and NDA. Choose "12th Pass / Drop Year" in the enquiry form or call our admissions team.</div></div>
-  <div class="rkg-faq-item"><button type="button" onclick="this.parentElement.classList.toggle('open')">How can I contact admissions? <span>⌄</span></button><div class="rkg-answer">Call 8573000541, 9648543424, 7905384057 or 9151315203, or submit the enquiry form above.</div></div>
+  <div class="rkg-faq-item"><button type="button" onclick="this.parentElement.classList.toggle('open')">How can I contact admissions? <span>⌄</span></button><div class="rkg-answer">Call <a href="tel:+918573000541">8573000541</a>, <a href="tel:+919648543424">9648543424</a>, <a href="tel:+917905384057">7905384057</a> or <a href="tel:+919151315203">9151315203</a>, or submit the enquiry form above.</div></div>
 </section>
 
 <footer class="rkg-footer">
@@ -795,8 +814,8 @@ html.rkg-modal-lock{overflow:hidden}
     <a class="rkg-btn" href="#rkg-admission">Enquire Now →</a>
   </div>
   <div class="rkg-footer-bottom">
-    <span>8573000541 · 9648543424 · 7905384057 · 9151315203</span>
-    <span>radhakrishnagurukulam@gmail.com</span>
+    <span><a href="tel:+918573000541">8573000541</a> · <a href="tel:+919648543424">9648543424</a> · <a href="tel:+917905384057">7905384057</a> · <a href="tel:+919151315203">9151315203</a></span>
+    <span><a href="mailto:radhakrishnagurukulam@gmail.com">radhakrishnagurukulam@gmail.com</a></span>
     <span>© 2026 Radha Krishna Gurukulam</span>
   </div>
   <p class="rkg-credit">Hostel photo: <a href="https://commons.wikimedia.org/wiki/File:SRMPS_-_Hostel_Room.jpg" target="_blank" rel="noopener">“SRMPS - Hostel Room”</a> by Sanjaynegi, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, cropped.</p>
@@ -863,7 +882,7 @@ html.rkg-modal-lock{overflow:hidden}
 
   function field(n){return form.elements[n].value.trim()}
   function finish(){
-    startBox.hidden=true;doneBox.hidden=false;msg.textContent='';body.scrollTop=0;
+    sending=false;startBox.hidden=true;doneBox.hidden=false;msg.textContent='';body.scrollTop=0;
   }
   function sendWhatsApp(){
     var text='Talent Search Exam Registration - Radha Krishna Gurukulam'+
@@ -907,6 +926,23 @@ document.querySelectorAll('[data-course-class]').forEach(function(a){a.addEventL
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!menu.hidden){set(false);btn.focus()}});
   document.addEventListener('click',function(e){if(!menu.hidden&&!e.target.closest('.rkg-nav'))set(false)});
   window.addEventListener('resize',function(){if(window.innerWidth>900)set(false)});
+})();
+</script>
+<script>
+document.querySelectorAll('.rkg-faq-item > button').forEach(function(b){
+  b.setAttribute('aria-expanded','false');
+  b.addEventListener('click',function(){b.setAttribute('aria-expanded',b.parentElement.classList.contains('open'))});
+});
+(function(){
+  var m=document.getElementById('rkg-tse-modal'),f=document.getElementById('rkg-tse');
+  if(!m||!f)return;
+  m.addEventListener('close',function(){
+    var done=document.getElementById('rkg-tse-done');
+    if(done.hidden)return;
+    f.reset();done.hidden=true;document.getElementById('rkg-tse-start').hidden=false;
+    document.getElementById('rkg-tse-wa').hidden=true;
+    var btn=document.getElementById('rkg-tse-submit');btn.disabled=false;btn.textContent='Submit Details →';
+  });
 })();
 </script>
 </body>
