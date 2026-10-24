@@ -1,0 +1,27 @@
+# Radha Krishna Gurukulam - Hostinger (Apache / LiteSpeed)
+
+DirectoryIndex index.html
+
+RewriteEngine On
+# Always use https://radhakrishnagurukulam.in (no www) so Google sees one address
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://radhakrishnagurukulam.in%{REQUEST_URI} [L,R=301]
+# /index.html -> /
+RewriteCond %{THE_REQUEST} \s/index\.html[\s?] [NC]
+RewriteRule ^index\.html$ / [L,R=301]
+
+# Compress text files
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/xml application/javascript image/svg+xml
+</IfModule>
+
+# Browser caching: page is always rechecked, images are kept for a month
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+</IfModule>
+
+Options -Indexes
